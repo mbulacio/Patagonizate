@@ -1,0 +1,12 @@
+@mixin imagenes ($ancho, $alto){
+    width: $ancho;
+    height: $alto;
+}
+
+@mixin margin ($top, $right, $bottom, $left){
+    margin: $top $right $bottom $left;
+}
+
+@mixin padding ($top, $right, $bottom, $left){
+    padding: $top $right $bottom $left;
+}

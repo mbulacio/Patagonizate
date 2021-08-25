@@ -1,15 +1,21 @@
-import './NavBar.css';
+import '../sass/App.css';
+import { CartWidget } from './CartWidget';
 
 function NavBar() {
     return (
+        <>
+        <div className="navBarFondo">
         <div className="navBar">
-            <p>Provincias</p>
-            <p>Carrito</p>
-            <p>Quienes Somos</p>
-            <p>Contacto</p>
+            <p>PAQUETES</p>
+            <p>HOTELES</p>
+            <p>EXCURSIONES</p>
+            <p>PROVINCIAS</p>
+            <CartWidget/>
         </div>
+        </div>
+        </>
     )
 }
 
-export default NavBar
+export default NavBar;
 

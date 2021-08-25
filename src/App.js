@@ -1,14 +1,16 @@
-import './App.css';
+import './sass/App.css';
 import NavBar from './components/NavBar';
+import { ItemListContainer } from './components/ItemListContainer';
 
 function App() {
   return (
     <>
       <header>
+      <img src="patagonizate-titulo.PNG" alt="" id="patagonizateTitulo"/>
       <NavBar/>
-      <h1>Patagonizate</h1>
+      <ItemListContainer title="PAQUETES" titleDos="HOTELES" titleTres="EXCURSIONES"/>
       </header>
-      <img src="patagonia.jpg" alt="" style={{width:"100%"}}></img>
+      
     </>
   );
 }

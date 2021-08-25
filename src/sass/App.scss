@@ -1,0 +1,104 @@
+@import './mixins';
+
+// App.js
+
+header{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+img#patagonizateTitulo{
+    @include imagenes (40rem, 13rem);
+    @include margin (25rem, 0rem, 0rem, 5rem);
+    z-index: 0;
+}
+
+// NavBar.jsx
+
+.navBar{
+    display: flex;
+    flex-flow: column nowrap;
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 1rem;
+    line-height: 0%;
+    @include margin (6rem, 0rem, 0rem, 10rem);
+    transition: 1.2s;
+}
+
+.navBarFondo{
+    border: 5px solid #000000;
+    @include imagenes (31rem, 58rem);
+    @include margin (1rem, 0rem, 2rem, 10rem);
+    transition: 1s;
+}
+
+.navBarFondo:hover{
+    @include imagenes (60rem, 58rem);
+   background-color: #c7dbff71;
+   border: 5px solid #ffffff;
+   .navBar{
+       color: rgb(0, 0, 0);
+   }
+   img#cartWidgetCarrito{
+    @include margin (0rem, 0rem, 0rem, 37rem);
+   }
+}
+
+
+// CartWidget.jsx
+
+img#cartWidgetCarrito{
+    @include imagenes (11rem, 11rem);
+    @include margin (0rem, 0rem, 0rem, 0rem);
+    transition: 1.2s;
+}
+
+// ItemListContainer.jsx
+
+div.itemListContainer{
+    display: flex;
+    @include margin (5rem, 0rem, 0rem, 3rem);
+    ul {
+        list-style: none;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-size: 3rem;
+        letter-spacing: 12px;
+        line-height: 4rem;
+        font-weight: bold;
+    }
+}
+
+div#itemListContainerContenedor{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+li.grettingTitle{
+    font-size: 4rem;
+    font-weight: bold;
+    @include margin (0rem, 0rem, 1rem, 0rem);
+}
+
+
+// index.js
+
+body {
+    margin: 0; 
+    font-family: 'Josefin Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url("https://elviajerofeliz.com/wp-content/uploads/2020/02/patagonia-argentina.jpg");
+    background-size: 120rem;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgb(231, 255, 247);
+  }
+  
+  .fondoPrincipal {
+    width: 100%;
+  }
