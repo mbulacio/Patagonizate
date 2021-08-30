@@ -83,6 +83,57 @@ li.grettingTitle{
     @include margin (0rem, 0rem, 1rem, 0rem);
 }
 
+li.grettingTitle:active{
+    color: rgb(0, 0, 0);
+}
+
+// itemCount.jsx
+div.item{
+    @include margin (0rem, 1rem, 2rem, 47rem);
+    div.items {
+        border-radius: 10px;
+        color: black;
+        @include imagenes(19rem, 35rem);
+        background-color: #96e7f1e7;
+        @include padding (1rem, 1rem, 1rem, 1rem);
+        @include margin (0rem, 1rem, 0rem, 1rem);
+        img{
+            border-radius: 10px 10px 0px 0px;
+            @include imagenes(21rem, 16rem);
+            @include margin (-20px, 0px, 0px, -16px);
+        }
+        h3 {
+            text-align: center;
+        }
+        label{
+            font-size: 20px;
+        }
+        button{
+            background-color: rgb(255, 255, 255);
+            border-radius: 6px;
+            border: none;
+            color: rgb(12, 156, 175);
+        }
+        button.sumar{
+            font-size: 20px;
+            @include imagenes(30px, 30px);
+            @include margin (0px, 50px, 0px, 70px);
+        }
+        button.restar{
+            font-size: 20px;
+            @include imagenes(30px, 30px);
+            @include margin (0px, 0px, 0px, 50px);
+        }
+        button.agregarAlCarrito{
+            font-size: 18px;
+            @include imagenes(200px, 30px);
+            @include margin (15px, 0px, 0px, 55px);
+        }
+    }
+}
+
+
+
 
 // index.js
 

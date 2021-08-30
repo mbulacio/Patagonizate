@@ -1,4 +1,5 @@
 import '../sass/App.css';
+import ItemCount from './ItemCount';
 
 export function ItemListContainer(gretting){
     const productos = [{provincia:'Neuquén', hotel: 'Paraiso', excursiones: 'Recorrido x'}, 
@@ -6,7 +7,8 @@ export function ItemListContainer(gretting){
                         {provincia:'Chubut', hotel: 'Fontela', excursiones: 'Recorrido f'},
                         {provincia:'Santa Cruz', hotel: 'Hilton', excursiones: 'Recorrido c'},
                         {provincia:'Tierra del Fuego', hotel: 'Brisas', excursiones: 'Recorrido n'}];
-    console.log(productos);
+
+    
     return(
         <>
             <div id="itemListContainerContenedor"> 
@@ -41,6 +43,7 @@ export function ItemListContainer(gretting){
                     </ul> 
                 </div>
             </div>
+            <ItemCount/>
         </>
     );
 }

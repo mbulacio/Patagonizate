@@ -10,7 +10,6 @@ function App() {
       <NavBar/>
       <ItemListContainer title="PAQUETES" titleDos="HOTELES" titleTres="EXCURSIONES"/>
       </header>
-      
     </>
   );
 }

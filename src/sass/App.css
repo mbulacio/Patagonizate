@@ -101,6 +101,67 @@ li.grettingTitle {
   margin: 0rem 0rem 1rem 0rem;
 }
 
+li.grettingTitle:active {
+  color: black;
+}
+
+div.item {
+  margin: 0rem 1rem 2rem 47rem;
+}
+
+div.item div.items {
+  border-radius: 10px;
+  color: black;
+  width: 19rem;
+  height: 35rem;
+  background-color: #96e7f1e7;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 0rem 1rem 0rem 1rem;
+}
+
+div.item div.items img {
+  border-radius: 10px 10px 0px 0px;
+  width: 21rem;
+  height: 16rem;
+  margin: -20px 0px 0px -16px;
+}
+
+div.item div.items h3 {
+  text-align: center;
+}
+
+div.item div.items label {
+  font-size: 20px;
+}
+
+div.item div.items button {
+  background-color: white;
+  border-radius: 6px;
+  border: none;
+  color: #0c9caf;
+}
+
+div.item div.items button.sumar {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  margin: 0px 50px 0px 70px;
+}
+
+div.item div.items button.restar {
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  margin: 0px 0px 0px 50px;
+}
+
+div.item div.items button.agregarAlCarrito {
+  font-size: 18px;
+  width: 200px;
+  height: 30px;
+  margin: 15px 0px 0px 55px;
+}
+
 body {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
