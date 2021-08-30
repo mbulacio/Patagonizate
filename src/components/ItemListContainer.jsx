@@ -8,7 +8,13 @@ export function ItemListContainer(gretting){
                         {provincia:'Santa Cruz', hotel: 'Hilton', excursiones: 'Recorrido c'},
                         {provincia:'Tierra del Fuego', hotel: 'Brisas', excursiones: 'Recorrido n'}];
 
-    
+    const onAdd = (state) => {
+        console.log(`Las personas incluidas son: ${state}
+Agregado al carrito`);
+        alert(`Las personas incluidas son: ${state}
+Agregado al carrito`);
+    }
+
     return(
         <>
             <div id="itemListContainerContenedor"> 
@@ -43,7 +49,7 @@ export function ItemListContainer(gretting){
                     </ul> 
                 </div>
             </div>
-            <ItemCount/>
+            <ItemCount stock={4} initial={1} onAdd={onAdd} />
         </>
     );
 }

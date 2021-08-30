@@ -1,23 +1,24 @@
 import { useState } from "react";
 import '../sass/App.css';
 
-function ItemCount() {
-    const [state, setstate] = useState(1)
+function ItemCount({stock, initial, onAdd}) {
+    const [state, setstate] = useState(initial)
 
     const sumar = () => {
-        if(state < 4){ 
+        if(state < stock){ 
             setstate(state + 1);
         }
     }
 
     const restar = () => {
-        if(state > 1){
+        if(state > initial){
             setstate(state - 1)
         }
     }
 
-    const agregado = () => {
-        alert("Agregado al carrito");
+    const infoOnAdd = () =>{
+        onAdd(state);
+        setstate(initial);
     }
 
     return (
@@ -33,7 +34,7 @@ function ItemCount() {
                 <label>{state}</label>
                 <button className="restar" onClick={restar}>-</button>
                 <br/>
-                <button className="agregarAlCarrito" onClick={agregado}><strong>Agregar al carrito</strong></button>
+                <button className="agregarAlCarrito" onClick={infoOnAdd}><strong>Agregar al carrito</strong></button>
             </div>
         </div>
         </>
