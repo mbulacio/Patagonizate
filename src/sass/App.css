@@ -65,6 +65,12 @@ img#cartWidgetCarrito {
   transition: 1.2s;
 }
 
+#logo {
+  width: 13rem;
+  height: 13rem;
+  margin: 1rem 0rem 4rem 53rem;
+}
+
 div.itemListContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,7 +112,13 @@ li.grettingTitle:active {
 }
 
 div.item {
-  margin: 0rem 1rem 2rem 47rem;
+  margin: 0rem 1rem 2rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 div.item div.items {
@@ -126,7 +138,7 @@ div.item div.items img {
   margin: -20px 0px 0px -16px;
 }
 
-div.item div.items h3 {
+div.item div.items h3, div.item div.items h4 {
   text-align: center;
 }
 
@@ -160,6 +172,54 @@ div.item div.items button.agregarAlCarrito {
   width: 200px;
   height: 30px;
   margin: 15px 0px 0px 55px;
+}
+
+div.item div.items button.agregarAlCarrito a {
+  text-decoration: none;
+  color: #0c9caf;
+}
+
+.modal-contenido {
+  background-color: white;
+  width: 22rem;
+  height: 13rem;
+  padding: 10px 20px;
+  margin: 20% auto;
+  position: relative;
+  -webkit-box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
+          box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
+  border-radius: 5px;
+}
+
+.modal-contenido p {
+  font-size: 2.2rem;
+  color: black;
+  text-align: center;
+  margin: 1.5rem 0rem 1rem 0rem;
+}
+
+.modal-contenido img#imgAgregado {
+  width: 8rem;
+  height: 8rem;
+  margin: 0rem 2rem 0rem 7rem;
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, 0.322);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+#miModal:target {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 body {

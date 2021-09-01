@@ -23,20 +23,20 @@ function ItemCount({stock, initial, onAdd}) {
 
     return (
         <>
-        <div className="item"> 
-            <div className="items">
-                <img src="neuquen.jpg" alt="paquete Neuquén"/>
-                <h3><strong>Paquete Neuquén</strong></h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi earum ea fugiat minima voluptas reprehenderit dolore ipsum esse aut, velit nobis, est perferendis exercitationem, eos error deleniti libero hic consequatur.</p>
-                <p>Max. por paquete: 4 personas</p>
-                <p><strong>Cantidad de personas</strong></p>
                 <button className="sumar" onClick={sumar}>+</button>
                 <label>{state}</label>
                 <button className="restar" onClick={restar}>-</button>
                 <br/>
-                <button className="agregarAlCarrito" onClick={infoOnAdd}><strong>Agregar al carrito</strong></button>
-            </div>
-        </div>
+                <button className="agregarAlCarrito" onClick={infoOnAdd}><a href="#miModal">Agregar al carrito</a></button>
+                {/* Modal */}
+                <a href="#items">
+                    <div id="miModal" className="modal">
+                        <div className="modal-contenido">
+                        <p>Agregado al carrito</p>
+                        <img src="ok.png" alt="ok" id="imgAgregado"/>
+                        </div>  
+                    </div>
+                </a>
         </>
     );
 }
