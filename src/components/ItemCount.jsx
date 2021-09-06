@@ -1,5 +1,4 @@
 import { useState } from "react";
-import '../sass/App.css';
 
 function ItemCount({stock, initial, onAdd}) {
     const [state, setstate] = useState(initial)
@@ -32,7 +31,7 @@ function ItemCount({stock, initial, onAdd}) {
                 <a href="#items">
                     <div id="miModal" className="modal">
                         <div className="modal-contenido">
-                        <p>Agregado al carrito</p>
+                        <p className="agregado">Agregado al carrito</p>
                         <img src="ok.png" alt="ok" id="imgAgregado"/>
                         </div>  
                     </div>

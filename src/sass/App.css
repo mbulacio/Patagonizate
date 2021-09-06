@@ -112,7 +112,7 @@ li.grettingTitle:active {
 }
 
 div.item {
-  margin: 0rem 1rem 2rem 2rem;
+  margin: 0rem 2rem 3rem 0rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,16 +124,16 @@ div.item {
 div.item div.items {
   border-radius: 10px;
   color: black;
-  width: 19rem;
-  height: 35rem;
+  width: 18rem;
+  height: 31rem;
   background-color: #96e7f1e7;
   padding: 1rem 1rem 1rem 1rem;
-  margin: 0rem 1rem 0rem 1rem;
+  margin: 0rem 3rem 0rem 1rem;
 }
 
 div.item div.items img {
   border-radius: 10px 10px 0px 0px;
-  width: 21rem;
+  width: 20rem;
   height: 16rem;
   margin: -20px 0px 0px -16px;
 }
@@ -142,8 +142,8 @@ div.item div.items h3, div.item div.items h4 {
   text-align: center;
 }
 
-div.item div.items label {
-  font-size: 20px;
+div.item div.items p {
+  text-align: center;
 }
 
 div.item div.items button {
@@ -153,58 +153,104 @@ div.item div.items button {
   color: #0c9caf;
 }
 
-div.item div.items button.sumar {
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  margin: 0px 50px 0px 70px;
-}
-
-div.item div.items button.restar {
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  margin: 0px 0px 0px 50px;
-}
-
-div.item div.items button.agregarAlCarrito {
+div.item div.items button.detail {
   font-size: 18px;
   width: 200px;
   height: 30px;
-  margin: 15px 0px 0px 55px;
+  margin: 7px 0px 0px 55px;
 }
 
-div.item div.items button.agregarAlCarrito a {
+div.itemDetailContainer {
+  margin: 0rem 2rem 0rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div.itemDetailContainer div.itemDetail {
+  border-radius: 10px;
+  color: black;
+  width: 40rem;
+  height: 29rem;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 0rem 3rem 1rem 1rem;
+}
+
+div.itemDetailContainer div.itemDetail img {
+  border-radius: 10px 10px 10px 10px;
+  width: 40rem;
+  height: 30rem;
+  margin: -20px 0px 0px -16px;
+}
+
+div.itemDetailContainer div.itemDetail h3 {
+  text-align: center;
+  color: white;
+  text-shadow: 3px 3px 4px black;
+  margin: -28rem 3rem 0rem 0rem;
+  font-size: 3rem;
+}
+
+div.itemDetailContainer div.itemDetail h4 {
+  text-align: center;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.527);
+  font-size: 2rem;
+  margin: 0rem 2rem 0rem 0rem;
+}
+
+div.itemDetailContainer div.itemDetail p.descripcion {
+  text-align: center;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.527);
+  font-size: 1.5rem;
+  padding: 1rem 3rem 1rem 1rem;
+}
+
+div.itemDetailContainer div.itemDetail label {
+  font-size: 20px;
+  color: white;
+}
+
+div.itemDetailContainer div.itemDetail button {
+  -webkit-box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.527);
+          box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.527);
+  background-color: white;
+  border-radius: 6px;
+  border: none;
+  color: #0c9caf;
+}
+
+div.itemDetailContainer div.itemDetail button.sumar {
+  font-size: 20px;
+  width: 2rem;
+  height: 2rem;
+  margin: 0rem 3rem 0rem 14rem;
+}
+
+div.itemDetailContainer div.itemDetail button.restar {
+  font-size: 20px;
+  width: 2rem;
+  height: 2rem;
+  margin: 0rem 0rem 0rem 3rem;
+}
+
+div.itemDetailContainer div.itemDetail button.agregarAlCarrito {
+  font-size: 18px;
+  font-weight: bold;
+  width: 15rem;
+  height: 2.5rem;
+  margin: 1rem 0rem 0rem 11.5rem;
+}
+
+div.itemDetailContainer div.itemDetail button.agregarAlCarrito a {
   text-decoration: none;
   color: #0c9caf;
 }
 
-.modal-contenido {
-  background-color: white;
-  width: 22rem;
-  height: 13rem;
-  padding: 10px 20px;
-  margin: 20% auto;
-  position: relative;
-  -webkit-box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
-          box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
-  border-radius: 5px;
-}
-
-.modal-contenido p {
-  font-size: 2.2rem;
-  color: black;
-  text-align: center;
-  margin: 1.5rem 0rem 1rem 0rem;
-}
-
-.modal-contenido img#imgAgregado {
-  width: 8rem;
-  height: 8rem;
-  margin: 0rem 2rem 0rem 7rem;
-}
-
-.modal {
+div.itemDetailContainer div.itemDetail .modal {
   background-color: rgba(255, 255, 255, 0.322);
   position: fixed;
   top: 0;
@@ -217,7 +263,33 @@ div.item div.items button.agregarAlCarrito a {
   transition: all 0.6s;
 }
 
-#miModal:target {
+div.itemDetailContainer div.itemDetail .modal .modal-contenido {
+  background-color: white;
+  width: 22.5rem;
+  height: 13.5rem;
+  padding: 10px 20px;
+  margin: 20% auto;
+  position: relative;
+  -webkit-box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
+          box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
+  border-radius: 5px;
+}
+
+div.itemDetailContainer div.itemDetail .modal .modal-contenido p.agregado {
+  font-size: 2.2rem;
+  color: black;
+  text-shadow: none;
+  text-align: center;
+  margin: 2rem 0rem 1rem 0rem;
+}
+
+div.itemDetailContainer div.itemDetail .modal .modal-contenido img#imgAgregado {
+  width: 8rem;
+  height: 8rem;
+  margin: 0rem 2rem 0rem 7.5rem;
+}
+
+div.itemDetailContainer div.itemDetail #miModal:target {
   opacity: 1;
   pointer-events: auto;
 }

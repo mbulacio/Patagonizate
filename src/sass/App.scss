@@ -94,26 +94,26 @@ li.grettingTitle:active{
 
 // item.jsx , itemCount.jsx
 div.item{
-    @include margin (0rem, 1rem, 2rem, 2rem);
+    @include margin (0rem, 2rem, 3rem, 0rem);
     display: flex;
     justify-content: space-between;
     div.items {
         border-radius: 10px;
         color: black;
-        @include imagenes(19rem, 35rem);
+        @include imagenes(18rem, 31rem);
         background-color: #96e7f1e7;
         @include padding (1rem, 1rem, 1rem, 1rem);
-        @include margin (0rem, 1rem, 0rem, 1rem);
+        @include margin (0rem, 3rem, 0rem, 1rem);
         img{
             border-radius: 10px 10px 0px 0px;
-            @include imagenes(21rem, 16rem);
+            @include imagenes(20rem, 16rem);
             @include margin (-20px, 0px, 0px, -16px);
         }
         h3, h4{
             text-align: center;
         }
-        label{
-            font-size: 20px;
+        p{
+            text-align: center;
         }
         button{
             background-color: rgb(255, 255, 255);
@@ -121,62 +121,124 @@ div.item{
             border: none;
             color: rgb(12, 156, 175);
         }
+        button.detail{
+            font-size: 18px;
+            @include imagenes(200px, 30px);
+            @include margin (7px, 0px, 0px, 55px);
+        }
+    }
+}
+
+
+// itemDetail
+
+div.itemDetailContainer{
+    @include margin (0rem, 2rem, 0rem, 0rem);
+    display: flex;
+    justify-content: space-between;
+    div.itemDetail {
+        border-radius: 10px;
+        color: black;
+        @include imagenes(40rem, 29rem);
+        @include padding (1rem, 1rem, 1rem, 1rem);
+        @include margin (0rem, 3rem, 1rem, 1rem);
+        img{
+            border-radius: 10px 10px 10px 10px;
+            @include imagenes(40rem, 30rem);
+            @include margin (-20px, 0px, 0px, -16px);
+        }
+        h3{
+            text-align: center;
+            color: white;
+            text-shadow: 3px 3px 4px black;
+            @include margin(-28rem, 3rem, 0rem, 0rem);
+            font-size: 3rem;
+        }
+        h4{
+            text-align: center;
+            color: white;
+            text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.527);
+            font-size: 2rem;
+            @include margin(0rem, 2rem, 0rem, 0rem);
+        }
+        p.descripcion{
+            text-align: center;
+            text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.527);
+            font-size: 1.5rem;
+            @include padding (1rem, 3rem, 1rem, 1rem);
+        }
+        label{
+            font-size: 20px;
+            color: white;
+        }
+        button{
+            box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.527);
+            background-color: rgb(255, 255, 255);
+            border-radius: 6px;
+            border: none;
+            color: rgb(12, 156, 175);
+        }
         button.sumar{
             font-size: 20px;
-            @include imagenes(30px, 30px);
-            @include margin (0px, 50px, 0px, 70px);
+            @include imagenes(2rem, 2rem);
+            @include margin (0rem, 3rem, 0rem, 14rem);
         }
         button.restar{
             font-size: 20px;
-            @include imagenes(30px, 30px);
-            @include margin (0px, 0px, 0px, 50px);
+            @include imagenes(2rem, 2rem);
+            @include margin (0rem, 0rem, 0rem, 3rem);
         }
         button.agregarAlCarrito{
             font-size: 18px;
-            @include imagenes(200px, 30px);
-            @include margin (15px, 0px, 0px, 55px);
+            font-weight: bold;
+            @include imagenes(15rem, 2.5rem);
+            @include margin (1rem, 0rem, 0rem, 11.5rem);
             a{
                 text-decoration: none;
                 color: rgb(12, 156, 175);
             }
         }
+        .modal{
+            background-color: rgba(255, 255, 255, 0.322);
+            position:fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            opacity:0;
+            pointer-events:none;
+            transition: all 0.6s;
+            .modal-contenido{
+                background-color:rgb(255, 255, 255);
+                @include imagenes(22.5rem, 13.5rem);
+                padding: 10px 20px;
+                margin: 20% auto;
+                position: relative;
+                box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
+                border-radius: 5px;
+                p.agregado{
+                    font-size: 2.2rem;
+                    color: rgb(0, 0, 0);
+                    text-shadow: none;
+                    text-align: center;
+                    @include margin(2rem, 0rem, 1rem, 0rem);
+                }
+                img#imgAgregado{
+                    @include imagenes(8rem, 8rem);
+                    @include margin(0rem, 2rem, 0rem, 7.5rem);
+                }
+              }
+          }
+          #miModal:target{
+            opacity:1;
+            pointer-events:auto;
+          }
     }
 }
 
-.modal-contenido{
-    background-color:rgb(255, 255, 255);
-    @include imagenes(22rem, 13rem);
-    padding: 10px 20px;
-    margin: 20% auto;
-    position: relative;
-    box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
-    border-radius: 5px;
-    p{
-        font-size: 2.2rem;
-        color: black;
-        text-align: center;
-        @include margin(1.5rem, 0rem, 1rem, 0rem);
-    }
-    img#imgAgregado{
-        @include imagenes(8rem, 8rem);
-        @include margin(0rem, 2rem, 0rem, 7rem);
-    }
-  }
-  .modal{
-    background-color: rgba(255, 255, 255, 0.322);
-    position:fixed;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    opacity:0;
-    pointer-events:none;
-    transition: all 0.6s;
-  }
-  #miModal:target{
-    opacity:1;
-    pointer-events:auto;
-  }
+
+
+  
 
 
 

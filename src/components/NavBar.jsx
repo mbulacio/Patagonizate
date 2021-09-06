@@ -1,4 +1,3 @@
-import '../sass/App.css';
 import { CartWidget } from './CartWidget';
 
 function NavBar() {
