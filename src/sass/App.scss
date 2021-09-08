@@ -18,13 +18,16 @@ img#patagonizateTitulo{
 .navBar{
     display: flex;
     flex-flow: column nowrap;
-    color: rgb(255, 255, 255);
     font-size: 5rem;
     font-weight: bold;
     letter-spacing: 1rem;
     line-height: 0%;
     @include margin (6rem, 0rem, 0rem, 10rem);
     transition: 1.2s;
+    a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
 }
 
 .navBarFondo{
@@ -39,7 +42,9 @@ img#patagonizateTitulo{
    background-color: #c7dbff71;
    border: 5px solid #ffffff;
    .navBar{
-       color: rgb(0, 0, 0);
+       a{
+            color: rgb(0, 0, 0);
+       }
    }
    img#cartWidgetCarrito{
     @include margin (0rem, 0rem, 0rem, 37rem);
@@ -92,10 +97,11 @@ li.grettingTitle:active{
     color: rgb(0, 0, 0);
 }
 
-// item.jsx , itemCount.jsx
+// item.jsx 
 div.item{
-    @include margin (0rem, 2rem, 3rem, 0rem);
+    @include margin (0rem, 1rem, 3rem, 0rem);
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
     div.items {
         border-radius: 10px;
@@ -103,7 +109,7 @@ div.item{
         @include imagenes(18rem, 31rem);
         background-color: #96e7f1e7;
         @include padding (1rem, 1rem, 1rem, 1rem);
-        @include margin (0rem, 3rem, 0rem, 1rem);
+        @include margin (0rem, 0rem, 2.5rem, 1rem);
         img{
             border-radius: 10px 10px 0px 0px;
             @include imagenes(20rem, 16rem);
@@ -130,28 +136,30 @@ div.item{
 }
 
 
-// itemDetail
+// itemDetail, itemCount
 
 div.itemDetailContainer{
     @include margin (0rem, 2rem, 0rem, 0rem);
     display: flex;
     justify-content: space-between;
+    z-index: 0;
     div.itemDetail {
         border-radius: 10px;
         color: black;
         @include imagenes(40rem, 29rem);
+        background-color: #96e7f1e7;
         @include padding (1rem, 1rem, 1rem, 1rem);
         @include margin (0rem, 3rem, 1rem, 1rem);
         img{
             border-radius: 10px 10px 10px 10px;
             @include imagenes(40rem, 30rem);
-            @include margin (-20px, 0px, 0px, -16px);
+            @include margin (0px, 0px, 0px, -16px);
         }
         h3{
             text-align: center;
             color: white;
             text-shadow: 3px 3px 4px black;
-            @include margin(-28rem, 3rem, 0rem, 0rem);
+            @include margin(0rem, 3rem, 0rem, 0rem);
             font-size: 3rem;
         }
         h4{
@@ -187,6 +195,7 @@ div.itemDetailContainer{
             font-size: 20px;
             @include imagenes(2rem, 2rem);
             @include margin (0rem, 0rem, 0rem, 3rem);
+            z-index: 3;
         }
         button.agregarAlCarrito{
             font-size: 18px;
@@ -198,6 +207,7 @@ div.itemDetailContainer{
                 color: rgb(12, 156, 175);
             }
         }
+        // modal
         .modal{
             background-color: rgba(255, 255, 255, 0.322);
             position:fixed;

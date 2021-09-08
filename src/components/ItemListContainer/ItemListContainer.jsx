@@ -1,25 +1,31 @@
 import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
-import { getProductos } from './promesas';
+import { getProductos } from '../promesas';
+import { useParams} from 'react-router-dom';
 
 export function ItemListContainer(gretting){
     const [productos, setProductos] = useState([])
 
+    const { category} = useParams()
+
     useEffect(() => {
-        getProductos
-        .then(resp => {
-            setProductos(resp)
-        })
-    }, [])
+        if (category === undefined){
+            getProductos
+            .then(resp => setProductos(resp))
+        }else{
+            getProductos
+            .then(resp => setProductos(resp.filter(r => category===r.categoria)))
+        }
+    }, [category])
 
     
     return(
-        <>
+        <>  
             <div id="itemListContainerContenedor"> 
                 <div className="itemListContainer"> 
                     <ul>
                         <li className="grettingTitle">{gretting.title}</li>
-                        {productos.map((provincia)=> <li key={provincia.id}>{provincia.id}</li>)}
+                        {productos.map((provincia)=> <li key={provincia.package}>{provincia.package}</li>)}
                     </ul> 
                 </div>
                 <div className="itemListContainer"> 
@@ -40,3 +46,4 @@ export function ItemListContainer(gretting){
         </>
     );
 }
+

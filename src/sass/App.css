@@ -23,7 +23,6 @@ img#patagonizateTitulo {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  color: white;
   font-size: 5rem;
   font-weight: bold;
   letter-spacing: 1rem;
@@ -31,6 +30,11 @@ img#patagonizateTitulo {
   margin: 6rem 0rem 0rem 10rem;
   -webkit-transition: 1.2s;
   transition: 1.2s;
+}
+
+.navBar a {
+  text-decoration: none;
+  color: white;
 }
 
 .navBarFondo {
@@ -49,7 +53,7 @@ img#patagonizateTitulo {
   border: 5px solid #ffffff;
 }
 
-.navBarFondo:hover .navBar {
+.navBarFondo:hover .navBar a {
   color: black;
 }
 
@@ -112,10 +116,14 @@ li.grettingTitle:active {
 }
 
 div.item {
-  margin: 0rem 2rem 3rem 0rem;
+  margin: 0rem 1rem 3rem 0rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -128,7 +136,7 @@ div.item div.items {
   height: 31rem;
   background-color: #96e7f1e7;
   padding: 1rem 1rem 1rem 1rem;
-  margin: 0rem 3rem 0rem 1rem;
+  margin: 0rem 0rem 2.5rem 1rem;
 }
 
 div.item div.items img {
@@ -168,6 +176,7 @@ div.itemDetailContainer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 0;
 }
 
 div.itemDetailContainer div.itemDetail {
@@ -175,6 +184,7 @@ div.itemDetailContainer div.itemDetail {
   color: black;
   width: 40rem;
   height: 29rem;
+  background-color: #96e7f1e7;
   padding: 1rem 1rem 1rem 1rem;
   margin: 0rem 3rem 1rem 1rem;
 }
@@ -183,14 +193,14 @@ div.itemDetailContainer div.itemDetail img {
   border-radius: 10px 10px 10px 10px;
   width: 40rem;
   height: 30rem;
-  margin: -20px 0px 0px -16px;
+  margin: 0px 0px 0px -16px;
 }
 
 div.itemDetailContainer div.itemDetail h3 {
   text-align: center;
   color: white;
   text-shadow: 3px 3px 4px black;
-  margin: -28rem 3rem 0rem 0rem;
+  margin: 0rem 3rem 0rem 0rem;
   font-size: 3rem;
 }
 
@@ -235,6 +245,7 @@ div.itemDetailContainer div.itemDetail button.restar {
   width: 2rem;
   height: 2rem;
   margin: 0rem 0rem 0rem 3rem;
+  z-index: 3;
 }
 
 div.itemDetailContainer div.itemDetail button.agregarAlCarrito {
