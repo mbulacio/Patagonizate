@@ -32,7 +32,7 @@ function ItemCount({stock, initial, onAdd}) {
                     <div id="miModal" className="modal">
                         <div className="modal-contenido">
                         <p className="agregado">Agregado al carrito</p>
-                        <img src="ok.png" alt="ok" id="imgAgregado"/>
+                        <img src="https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemok_103757.png" alt="ok" id="imgAgregado"/>
                         </div>  
                     </div>
                 </a>

@@ -169,59 +169,48 @@ div.item div.items button.detail {
 }
 
 div.itemDetailContainer {
-  margin: 0rem 2rem 0rem 0rem;
+  margin: 0rem 0rem 0rem 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  z-index: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.itemDetailContainer div.itemDetailImg img {
+  border-radius: 10px 0px 0px 10px;
+  width: 65rem;
+  height: 43rem;
+  margin: 0px 0px 0px 0px;
 }
 
 div.itemDetailContainer div.itemDetail {
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 0px;
   color: black;
   width: 40rem;
-  height: 29rem;
-  background-color: #96e7f1e7;
-  padding: 1rem 1rem 1rem 1rem;
-  margin: 0rem 3rem 1rem 1rem;
-}
-
-div.itemDetailContainer div.itemDetail img {
-  border-radius: 10px 10px 10px 10px;
-  width: 40rem;
-  height: 30rem;
-  margin: 0px 0px 0px -16px;
+  height: 40rem;
+  background-color: #a9f5ffc7;
+  padding: 2rem 0rem 1rem 2rem;
+  margin: 0rem 3rem 1rem 0rem;
 }
 
 div.itemDetailContainer div.itemDetail h3 {
   text-align: center;
   color: white;
-  text-shadow: 3px 3px 4px black;
+  text-shadow: -1px 1px 5px rgba(0, 0, 0, 0.411);
   margin: 0rem 3rem 0rem 0rem;
-  font-size: 3rem;
-}
-
-div.itemDetailContainer div.itemDetail h4 {
-  text-align: center;
-  color: white;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.527);
-  font-size: 2rem;
-  margin: 0rem 2rem 0rem 0rem;
+  font-size: 2.5rem;
 }
 
 div.itemDetailContainer div.itemDetail p.descripcion {
   text-align: center;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.527);
-  font-size: 1.5rem;
-  padding: 1rem 3rem 1rem 1rem;
+  font-size: 1rem;
+  padding: 0rem 3rem 1rem 1rem;
 }
 
 div.itemDetailContainer div.itemDetail label {
-  font-size: 20px;
-  color: white;
+  font-size: 25px;
 }
 
 div.itemDetailContainer div.itemDetail button {

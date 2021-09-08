@@ -139,45 +139,37 @@ div.item{
 // itemDetail, itemCount
 
 div.itemDetailContainer{
-    @include margin (0rem, 2rem, 0rem, 0rem);
+    @include margin (0rem, 0rem, 0rem, 2rem);
     display: flex;
-    justify-content: space-between;
-    z-index: 0;
-    div.itemDetail {
-        border-radius: 10px;
-        color: black;
-        @include imagenes(40rem, 29rem);
-        background-color: #96e7f1e7;
-        @include padding (1rem, 1rem, 1rem, 1rem);
-        @include margin (0rem, 3rem, 1rem, 1rem);
+    justify-content: center;
+    div.itemDetailImg{
         img{
-            border-radius: 10px 10px 10px 10px;
-            @include imagenes(40rem, 30rem);
-            @include margin (0px, 0px, 0px, -16px);
+            border-radius: 10px 0px 0px 10px;
+            @include imagenes(65rem, 43rem);
+            @include margin (0px, 0px, 0px, 0px);
         }
+    }
+    div.itemDetail {
+        border-radius: 0px 10px 10px 0px;
+        color: black;
+        @include imagenes(40rem, 40rem);
+        background-color: #a9f5ffc7;
+        @include padding (2rem, 0rem, 1rem, 2rem);
+        @include margin (0rem, 3rem, 1rem, 0rem);
         h3{
             text-align: center;
             color: white;
-            text-shadow: 3px 3px 4px black;
+            text-shadow: -1px 1px 5px rgba(0, 0, 0, 0.411);
             @include margin(0rem, 3rem, 0rem, 0rem);
-            font-size: 3rem;
-        }
-        h4{
-            text-align: center;
-            color: white;
-            text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.527);
-            font-size: 2rem;
-            @include margin(0rem, 2rem, 0rem, 0rem);
+            font-size: 2.5rem;
         }
         p.descripcion{
             text-align: center;
-            text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.527);
-            font-size: 1.5rem;
-            @include padding (1rem, 3rem, 1rem, 1rem);
+            font-size: 1rem;
+            @include padding (0rem, 3rem, 1rem, 1rem);
         }
         label{
-            font-size: 20px;
-            color: white;
+            font-size: 25px;
         }
         button{
             box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.527);
