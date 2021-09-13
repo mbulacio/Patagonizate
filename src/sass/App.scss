@@ -7,57 +7,45 @@ header{
     flex-flow: row wrap;
 }
 
-img#patagonizateTitulo{
-    @include imagenes (40rem, 13rem);
-    @include margin (25rem, 0rem, 0rem, 5rem);
-    z-index: 0;
+img#imagenPrincipal{
+    @include imagenes (100%, 60rem);
 }
 
 // NavBar.jsx
 
 .navBar{
     display: flex;
-    flex-flow: column nowrap;
-    font-size: 5rem;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
     font-weight: bold;
-    letter-spacing: 1rem;
-    line-height: 0%;
-    @include margin (6rem, 0rem, 0rem, 10rem);
-    transition: 1.2s;
+    letter-spacing: 0.2rem;
+    @include imagenes (100%, 5.5rem);
+    font-size: 1.8rem;
     a{
         text-decoration: none;
-        color: rgb(255, 255, 255);
+        color: #151313;
+        @include margin (0rem, 0rem, 0rem, 3rem);
+    }
+    p{
+        @include margin (0rem, 2rem, 0rem, 0rem);
+    }
+    img#cartWidgetCarrito{
+        @include imagenes (3rem, 3rem);
+    }
+    img#patagonizateTitulo{
+        @include imagenes (15rem, 4.5rem);
+        @include margin (0.5rem, 2rem, 0rem, 0rem);
     }
 }
 
-.navBarFondo{
-    border: 5px solid #000000;
-    @include imagenes (31rem, 58rem);
-    @include margin (1rem, 0rem, 2rem, 10rem);
-    transition: 1s;
-}
-
-.navBarFondo:hover{
-    @include imagenes (60rem, 58rem);
-   background-color: #c7dbff71;
-   border: 5px solid #ffffff;
-   .navBar{
-       a{
-            color: rgb(0, 0, 0);
-       }
-   }
-   img#cartWidgetCarrito{
-    @include margin (0rem, 0rem, 0rem, 37rem);
-   }
-}
-
-
-// CartWidget.jsx
-
-img#cartWidgetCarrito{
-    @include imagenes (11rem, 11rem);
-    @include margin (0rem, 0rem, 0rem, 0rem);
-    transition: 1.2s;
+.navBar{
+    div{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+    }
+    
 }
 
 // ItemListContainer.jsx
@@ -93,9 +81,6 @@ li.grettingTitle{
     @include margin (0rem, 0rem, 1rem, 0rem);
 }
 
-li.grettingTitle:active{
-    color: rgb(0, 0, 0);
-}
 
 // item.jsx 
 div.item{
@@ -106,7 +91,7 @@ div.item{
     div.items {
         border-radius: 10px;
         color: black;
-        @include imagenes(18rem, 31rem);
+        @include imagenes(18rem, 32rem);
         background-color: #96e7f1e7;
         @include padding (1rem, 1rem, 1rem, 1rem);
         @include margin (0rem, 0rem, 2.5rem, 1rem);
@@ -145,14 +130,14 @@ div.itemDetailContainer{
     div.itemDetailImg{
         img{
             border-radius: 10px 0px 0px 10px;
-            @include imagenes(65rem, 43rem);
+            @include imagenes(70rem, 50rem);
             @include margin (0px, 0px, 0px, 0px);
         }
     }
     div.itemDetail {
         border-radius: 0px 10px 10px 0px;
         color: black;
-        @include imagenes(40rem, 40rem);
+        @include imagenes(40rem, 47rem);
         background-color: #a9f5ffc7;
         @include padding (2rem, 0rem, 1rem, 2rem);
         @include margin (0rem, 3rem, 1rem, 0rem);
@@ -249,15 +234,15 @@ div.itemDetailContainer{
 
 body {
     margin: 0; 
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Comfortaa', cursive;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url("https://elviajerofeliz.com/wp-content/uploads/2020/02/patagonia-argentina.jpg");
-    background-size: 120rem;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: rgb(231, 255, 247);
+    // background-image: url("https://elviajerofeliz.com/wp-content/uploads/2020/02/patagonia-argentina.jpg");
+    // background-size: 120rem;
+    // background-position: top;
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-color: #ffffff;
   }
   
   .fondoPrincipal {

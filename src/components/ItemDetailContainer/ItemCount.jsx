@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 function ItemCount({stock, initial, onAdd}) {
     const [state, setstate] = useState(initial)
+    const [cambioBoton, setCambioBoton] = useState(false)
 
     const sumar = () => {
         if(state < stock){ 
@@ -18,6 +20,7 @@ function ItemCount({stock, initial, onAdd}) {
     const infoOnAdd = () =>{
         onAdd(state);
         setstate(initial);
+        setCambioBoton(true);
     }
 
     return (
@@ -26,16 +29,14 @@ function ItemCount({stock, initial, onAdd}) {
                 <label>{state}</label>
                 <button className="restar" onClick={restar}>-</button>
                 <br/>
-                <button className="agregarAlCarrito" onClick={infoOnAdd}><a href="#miModal">Agregar al carrito</a></button>
-                {/* Modal */}
-                <a href="#items">
-                    <div id="miModal" className="modal">
-                        <div className="modal-contenido">
-                        <p className="agregado">Agregado al carrito</p>
-                        <img src="https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemok_103757.png" alt="ok" id="imgAgregado"/>
-                        </div>  
-                    </div>
-                </a>
+                {
+                    cambioBoton ? 
+                    <Link to='/cart'>
+                        <button className="agregarAlCarrito">Terminar mi compra</button>
+                    </Link>
+                    :
+                        <button className="agregarAlCarrito" onClick={infoOnAdd}>Agregar al carrito</button>
+                }
         </>
     );
 }

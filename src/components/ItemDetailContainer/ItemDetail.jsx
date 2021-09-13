@@ -1,10 +1,8 @@
 import ItemCount from "./ItemCount";
 
 function ItemDetail({producto}) {
-
     const onAdd = (state) => {
-        console.log(`Las personas incluidas son: ${state} en tu ${producto.id}
-    Agregado al carrito`);
+        producto.cant = state
     }
 
     return (
