@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CartWidget } from './CartWidget';
+import { CartWidget } from './Cart/CartWidget';
 
 function NavBar() {
     return (
@@ -12,13 +12,12 @@ function NavBar() {
                 <p>Hoteles</p>
                 </Link>
                 <Link to={"/categoria/Tour"}>
-                <p>Tour</p>
+                <p>Turismo</p>
                 </Link>
                 <Link to="/">
                 <img src="patagonizate-titulo.PNG" alt="" id="patagonizateTitulo"/>
                 </Link>
                 <p>Sobre</p>
-                <p>Reviews</p>
                 <p>Contacto</p>
                 <CartWidget/>
         </nav>

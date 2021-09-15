@@ -8,7 +8,7 @@ header{
 }
 
 img#imagenPrincipal{
-    @include imagenes (100%, 60rem);
+    @include imagenes (100%, 0%);
 }
 
 // NavBar.jsx
@@ -16,26 +16,27 @@ img#imagenPrincipal{
 .navBar{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     font-weight: bold;
     letter-spacing: 0.2rem;
-    @include imagenes (100%, 5.5rem);
-    font-size: 1.8rem;
+    @include imagenes (100%, 9.2vh);
+    font-size: 130%;
+    @include padding (0rem, 3rem, 0rem, 2.5rem);
     a{
         text-decoration: none;
         color: #151313;
-        @include margin (0rem, 0rem, 0rem, 3rem);
+        @include margin (0rem, 0rem, 0rem, 0rem);
     }
     p{
-        @include margin (0rem, 2rem, 0rem, 0rem);
+        @include margin (0rem, 0rem, 0rem, 0rem);
     }
     img#cartWidgetCarrito{
-        @include imagenes (3rem, 3rem);
+        @include imagenes (4rem, 3.2rem);
     }
     img#patagonizateTitulo{
         @include imagenes (15rem, 4.5rem);
-        @include margin (0.5rem, 2rem, 0rem, 0rem);
+        @include margin (0.9rem, 0rem, 0rem, -1rem);
     }
 }
 
@@ -134,7 +135,7 @@ div.itemDetailContainer{
             @include margin (0px, 0px, 0px, 0px);
         }
     }
-    div.itemDetail {
+    div.itemDetail{
         border-radius: 0px 10px 10px 0px;
         color: black;
         @include imagenes(40rem, 47rem);
@@ -223,9 +224,121 @@ div.itemDetailContainer{
     }
 }
 
+//cart.jsx, cartContext
 
+div.ordenarCart{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    @include margin(3rem, 0rem, 2rem, 0rem);
+    div.cartDetail{
+        color: white;
+        @include imagenes(25rem, 18rem);
+        background-image: url();
+        background-color: #5da5f3;
+        border-right: 3px dotted rgb(255, 255, 255);
+        border-radius: 1rem 0rem 0rem 1rem;
+        text-align: center;
+        div{
+            display: flex;
+            flex-flow: row;
+            @include margin(0.8rem, 0rem, 0rem, 0rem);
+            h2{
+                @include margin(0.4rem, 0rem, 0rem, 0rem);
+            }
+            hr.hrVertical{
+                @include imagenes(0.5rem, 2.5rem);
+                @include margin(0rem, 2rem, 0rem, 4.2rem);
+            }
+            p{
+                color: white;
+                font-weight: bolder;
+                @include margin(0.5rem, 0rem, 0rem, 4.7rem);
+                font-size: 1.3rem;
+            }
+        } 
+        h3 strong{
+            @include margin(0rem, 0rem, 0rem, 0rem);
+        }
+        p strong{
+            font-size: 1.2rem;
+            @include margin(0rem, 0rem, 0rem, 0rem);
+        }
+        div#cartCancelar{
+            p{
+                color: white;
+                font-weight: bolder;
+                @include margin(0.2rem, 0rem, 0rem, 7.5rem);
+                font-size: 1.1rem;
+            }
+            img.cartCancel{
+                @include imagenes(2rem, 2rem);
+                @include margin(0rem, 0rem, 0.5rem, 1rem);
+            }
+        }
+    }
+    div.cartLateralDerecho{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        @include margin(0rem, 0rem, 0rem, 0.1rem);
+        @include imagenes(10rem, 18rem);
+        border-left: 3px dotted rgb(255, 255, 255);
+        border-radius: 0rem 1rem 1rem 0rem;
+        text-align: center;
+        background-color: #3482D5;
+        // transicion hover
+        transition: 0.2s ease-in-out;
+        p{
+            color: white;
+            @include margin(0.2rem, 0rem, 0rem, 0rem);
+            font-weight: bolder;
+        }
+        img.cartImgAvion{
+            @include margin(1rem, 0rem, 1rem, 1.7rem);
+            @include imagenes(7rem, 7rem);
+        }
+        hr{
+            @include imagenes(8rem, 0.5rem);
+            background-color: #1d437e;
+            border-radius: 1rem;
+            border:none;
+            @include margin(0.5rem, 0rem, 0rem, 1rem);
+        }
+    }
+}
 
-  
+div.ordenarCart:hover{
+    div.cartLateralDerecho{
+        @include margin(0rem, 0rem, 0rem, 1.2rem);
+    }
+}
+
+div#cartCentrar{
+    display: flex;
+    justify-content: center;
+    button#cartBorrarCarrito{
+        @include margin(1rem, 0rem, 0rem, 0rem);
+        @include imagenes(30rem, 3.5rem);
+        background-color: rgb(218, 26, 26);
+        color: white;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        transition: 0.5s;
+    }
+    button#cartBorrarCarrito:hover{
+        box-shadow: 1px 1px 14px 7px rgb(185, 185, 185);
+    }
+}
+
+hr{
+    @include imagenes(23rem, 0.5rem);
+    background-color: #1d437e;
+    border-radius: 1rem;
+    border:none;
+    @include margin(0rem, 0rem, 0rem, 1rem);
+}
 
 
 

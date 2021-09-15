@@ -1,17 +1,26 @@
+import { useCartContext } from "../../Context/cartContext";
 import ItemCount from "./ItemCount";
 
 function ItemDetail({producto}) {
+
+    const {agregarAlCarrito} = useCartContext()
+
     const onAdd = (state) => {
-        producto.cant = state
+        // cantidad 
+        if(producto.cant < 4){
+            producto.cant = state
+            agregarAlCarrito(producto, state)
+        }
+        
     }
 
     return (
         <>
             <div className="itemDetailImg" id="itemDetail">
-                <img src={producto.img} alt="paquete Neuquén" id={producto.id}/>
+                <img src={producto.img} alt="paquete Neuquén" id={producto.title}/>
             </div>
             <div className="itemDetail" id="itemDetail">
-                <h3><strong>{producto.id}</strong></h3>
+                <h3><strong>{producto.title}</strong></h3>
                 <section>
                     <article>
                         <p><strong>Acerca de</strong></p>
@@ -25,8 +34,8 @@ function ItemDetail({producto}) {
                     </article>
                 </section>
                 <h3>${producto.price}</h3>
-                <p className="descripcion">Max. por paquete: {producto.cant} personas</p>
-                <ItemCount stock={4} initial={1} onAdd={onAdd}/>
+                <p className="descripcion">Max. por paquete: {producto.stock} personas</p>
+                <ItemCount stock={producto.stock} initial={1} onAdd={onAdd}/>
             </div>
         </>
     )

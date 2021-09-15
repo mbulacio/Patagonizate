@@ -10,7 +10,7 @@ header {
 
 img#imagenPrincipal {
   width: 100%;
-  height: 60rem;
+  height: 0%;
 }
 
 .navBar {
@@ -21,38 +21,39 @@ img#imagenPrincipal {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   font-weight: bold;
   letter-spacing: 0.2rem;
   width: 100%;
-  height: 5.5rem;
-  font-size: 1.8rem;
+  height: 9.2vh;
+  font-size: 130%;
+  padding: 0rem 3rem 0rem 2.5rem;
 }
 
 .navBar a {
   text-decoration: none;
   color: #151313;
-  margin: 0rem 0rem 0rem 3rem;
+  margin: 0rem 0rem 0rem 0rem;
 }
 
 .navBar p {
-  margin: 0rem 2rem 0rem 0rem;
+  margin: 0rem 0rem 0rem 0rem;
 }
 
 .navBar img#cartWidgetCarrito {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 3.2rem;
 }
 
 .navBar img#patagonizateTitulo {
   width: 15rem;
   height: 4.5rem;
-  margin: 0.5rem 2rem 0rem 0rem;
+  margin: 0.9rem 0rem 0rem -1rem;
 }
 
 .navBar div {
@@ -287,6 +288,164 @@ div.itemDetailContainer div.itemDetail .modal .modal-contenido img#imgAgregado {
 div.itemDetailContainer div.itemDetail #miModal:target {
   opacity: 1;
   pointer-events: auto;
+}
+
+div.ordenarCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3rem 0rem 2rem 0rem;
+}
+
+div.ordenarCart div.cartDetail {
+  color: white;
+  width: 25rem;
+  height: 18rem;
+  background-image: url();
+  background-color: #5da5f3;
+  border-right: 3px dotted white;
+  border-radius: 1rem 0rem 0rem 1rem;
+  text-align: center;
+}
+
+div.ordenarCart div.cartDetail div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  margin: 0.8rem 0rem 0rem 0rem;
+}
+
+div.ordenarCart div.cartDetail div h2 {
+  margin: 0.4rem 0rem 0rem 0rem;
+}
+
+div.ordenarCart div.cartDetail div hr.hrVertical {
+  width: 0.5rem;
+  height: 2.5rem;
+  margin: 0rem 2rem 0rem 4.2rem;
+}
+
+div.ordenarCart div.cartDetail div p {
+  color: white;
+  font-weight: bolder;
+  margin: 0.5rem 0rem 0rem 4.7rem;
+  font-size: 1.3rem;
+}
+
+div.ordenarCart div.cartDetail h3 strong {
+  margin: 0rem 0rem 0rem 0rem;
+}
+
+div.ordenarCart div.cartDetail p strong {
+  font-size: 1.2rem;
+  margin: 0rem 0rem 0rem 0rem;
+}
+
+div.ordenarCart div.cartDetail div#cartCancelar p {
+  color: white;
+  font-weight: bolder;
+  margin: 0.2rem 0rem 0rem 7.5rem;
+  font-size: 1.1rem;
+}
+
+div.ordenarCart div.cartDetail div#cartCancelar img.cartCancel {
+  width: 2rem;
+  height: 2rem;
+  margin: 0rem 0rem 0.5rem 1rem;
+}
+
+div.ordenarCart div.cartLateralDerecho {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0rem 0rem 0rem 0.1rem;
+  width: 10rem;
+  height: 18rem;
+  border-left: 3px dotted white;
+  border-radius: 0rem 1rem 1rem 0rem;
+  text-align: center;
+  background-color: #3482D5;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+div.ordenarCart div.cartLateralDerecho p {
+  color: white;
+  margin: 0.2rem 0rem 0rem 0rem;
+  font-weight: bolder;
+}
+
+div.ordenarCart div.cartLateralDerecho img.cartImgAvion {
+  margin: 1rem 0rem 1rem 1.7rem;
+  width: 7rem;
+  height: 7rem;
+}
+
+div.ordenarCart div.cartLateralDerecho hr {
+  width: 8rem;
+  height: 0.5rem;
+  background-color: #1d437e;
+  border-radius: 1rem;
+  border: none;
+  margin: 0.5rem 0rem 0rem 1rem;
+}
+
+div.ordenarCart:hover div.cartLateralDerecho {
+  margin: 0rem 0rem 0rem 1.2rem;
+}
+
+div#cartCentrar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div#cartCentrar button#cartBorrarCarrito {
+  margin: 1rem 0rem 0rem 0rem;
+  width: 30rem;
+  height: 3.5rem;
+  background-color: #da1a1a;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+div#cartCentrar button#cartBorrarCarrito:hover {
+  -webkit-box-shadow: 1px 1px 14px 7px #b9b9b9;
+          box-shadow: 1px 1px 14px 7px #b9b9b9;
+}
+
+hr {
+  width: 23rem;
+  height: 0.5rem;
+  background-color: #1d437e;
+  border-radius: 1rem;
+  border: none;
+  margin: 0rem 0rem 0rem 1rem;
 }
 
 body {
