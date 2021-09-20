@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../Context/cartContext';
 import { CartWidget } from './Cart/CartWidget';
 
 function NavBar() {
+const {agregar} = useCartContext()
     return (
         <>
         <nav className="navBar">
@@ -12,14 +14,14 @@ function NavBar() {
                 <p>Hoteles</p>
                 </Link>
                 <Link to={"/categoria/Tour"}>
-                <p>Turismo</p>
+                <p>Tours</p>
                 </Link>
                 <Link to="/">
                 <img src="patagonizate-titulo.PNG" alt="" id="patagonizateTitulo"/>
                 </Link>
                 <p>Sobre</p>
                 <p>Contacto</p>
-                <CartWidget/>
+                {agregar.length == 0? <div id="sinIcon"></div> : <CartWidget/>}
         </nav>
         </>
     )

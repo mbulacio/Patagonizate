@@ -1,4 +1,5 @@
 import { useCartContext } from "../../Context/cartContext"
+import { Link } from 'react-router-dom';
 
 function Cart(){
 
@@ -6,13 +7,17 @@ function Cart(){
 
     return(
         <>
+        {agregar.length == 0? 
+                <h1 id="carritoVacio">Carrito Vacio</h1>
+                :
+                <h1 id="carrito">Carrito</h1>}
             {agregar.map((items) => 
-            <div className="ordenarCart"> 
-                <div className="cartDetail" key={items.id}>
+            <div className="ordenarCart" key={items.id}> 
+                <div className="cartDetail">
                     <div>
                         <p><em>Buen Viaje !</em></p>
                             <hr className="hrVertical"/>
-                        <h2>#{items.id}</h2>
+                        <h2>#{items.initial}</h2>
                     </div>
                         <hr/>                
                     <h3><strong>Destino: {items.title}</strong></h3>
@@ -35,7 +40,12 @@ function Cart(){
                 </div>
             </div>)}
             <div id="cartCentrar">
-                <button id="cartBorrarCarrito" onClick={borrarListado}> Vaciar Carrito</button>
+                {agregar.length == 0? 
+                <Link to="/">
+                <button id="cartIrAlInicio" onClick={borrarListado}>ir al inicio</button>
+                </Link>
+                :
+                <button id="cartBorrarCarrito" onClick={borrarListado}> Vaciar Carrito</button>}
             </div>
         </>
     )

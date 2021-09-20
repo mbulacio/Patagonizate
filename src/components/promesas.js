@@ -13,7 +13,7 @@ const productos = [
     {categoria: "Tour", id: "TVS", title: "Tour Viñedos del sur", provincia: "Neuquén", tour: "Viñedos del sur", img: "https://aws.traveler.es/prod/designs/v1/assets/940x627/145133.jpg", price: 33293, cant: 0, stock: 4},
     {categoria: "Tour", id: "TIV", title: "Tour Isla Victoria", provincia: "Río Negro",  tour: "Isla Victoria", img: "https://surfacetravel.com.ar/venta-online/wp-content/uploads/2017/11/isla_victoria_4.jpg", price: 35443,  cant: 0, stock: 4},
     {categoria: "Tour", id: "TPV", title: "Tour Península Valdés", provincia: "Chubut", tour: "Península Valdés", img: "https://argentinavision.com/wp-content/uploads/2021/08/peninsula-valdes-sur-avistaje-de-ballenas-excursiones-03-1.jpg", price: 34234, cant: 0, stock: 4},
-    {categoria: "Tour", id: "TGPM", title: "Tour Glaciar Perito Moreno", provincia: "Santa Cruz", tour: "Glaciar Perito Moreno", img: "https://www.serargentino.com/public/images/2020/02/glaciar1-773x458.jpeg", price: 23314, cant: 0, stock: 4},
+    {categoria: "Tour", id: "TGPM", title: "Tour Glaciar", provincia: "Santa Cruz", tour: "Glaciar Perito Moreno", img: "https://www.serargentino.com/public/images/2020/02/glaciar1-773x458.jpeg", price: 23314, cant: 0, stock: 4},
     {categoria: "Tour", id: "TLE", title: "Tour Laguna Esmeralda", provincia: "Tierra del Fuego", tour: "Laguna Esmeralda", img: "https://trending-media.com/wp-content/uploads/2019/05/Ushuaia.jpg", price: 43562, cant: 0, stock: 4}];
 
     export const getProductos = new Promise((resuelto) => {
