@@ -3,10 +3,11 @@ import NavBar from './components/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
-import ImagenPrincipal from './components/ImagenPrincipal';
+import ImagenPrincipal from './components/PaginaPrincipal/ImagenPrincipal';
 import CartContextProvider from './Context/cartContext';
 
 import './sass/App.css';
+import Sobre from './components/SobrePatagonia/sobre';
 
 function App() {
 
@@ -20,10 +21,13 @@ function App() {
         
               <Route exact path='/'>
               <ImagenPrincipal/>
+              <Sobre/>
               <ItemListContainer title="PAQUETES" titleDos="HOTELES" titleTres="EXCURSIONES"/>
               </Route>
               
               <Route exact path='/categoria/:category' component={ItemListContainer}/>
+              
+              <Route exact path='/provincia/:prov' component={ItemListContainer}/>
 
               <Route exact path='/id/:item' component={ItemDetailContainer}/>
 

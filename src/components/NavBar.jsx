@@ -21,7 +21,7 @@ const {agregar} = useCartContext()
                 </Link>
                 <p>Sobre</p>
                 <p>Contacto</p>
-                {agregar.length == 0? <div id="sinIcon"></div> : <CartWidget/>}
+                {agregar.length === 0? <div id="sinIcon"></div> : <CartWidget/>}
         </nav>
         </>
     )

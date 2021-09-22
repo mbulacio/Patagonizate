@@ -1,45 +1,60 @@
-import { useEffect, useState } from 'react';
+import {useEffect,useState} from 'react';
 import ItemList from './ItemList';
-import {getProductos} from '../promesas';
-import { useParams} from 'react-router-dom';
-// import { getFirestore } from '../../service/getFirebase';
+import {useParams} from 'react-router-dom';
+import {getFirestore} from '../../service/getFirebase';
 
-export function ItemListContainer(){
+export function ItemListContainer() {
     const [productos, setProductos] = useState([])
 
-    const { category } = useParams()
+    const {category} = useParams()
+
+    const {prov} = useParams()
+
+    // por categoria
 
     useEffect(() => {
+        const db = getFirestore()
+        const queryDB = db.collection('productos')
 
-        // const baseDeDatos = getFirestore()
-        // const querybaseDeDatos = baseDeDatos.collection('productos').get()
-        // querybaseDeDatos.then(data => {
-        //     if(data.size === 0){
-        //         console.log('No hay nada')
-        //     }
-        //     setProductos(data.docs.map(
-        //         prod => (
-        //             { id: prod.id, ...prod.data()}
-        //             )
-        //         )
-        //     )
-        //     })
-        if (category === undefined){
-            getProductos
-            .then(resp => setProductos(resp))
-        }else{
-            getProductos
-            .then(resp => setProductos(resp.filter(r => category===r.categoria)))
-        }
+        const conditionQuery = category ?
+            queryDB.where('categoria', '==', category)
+        :
+            queryDB
+
+        conditionQuery.get()
+        .then(data =>{
+            if(data.size===0){
+                console.log('Colección vacia');
+            }
+            setProductos( data.docs.map(prod => ({ id: prod.data().id, ...prod.data()})))
+        })
     }, [category])
 
-    console.log(productos);
+    // por provincia
 
-    return(
-        <>  
-            <img src="patagonizate-logo.png" alt="Patagonizate logo" id="logo" />
-            <ItemList produc={productos}/>
+    useEffect(() => {
+        const db = getFirestore()
+        const queryDB = db.collection('productos')
+
+        const conditionQuery = prov ?
+            queryDB.where('provincia', '==', prov)
+        :
+            queryDB
+
+        conditionQuery.get()
+        .then(data =>{
+            if(data.size===0){
+                console.log('Colección vacia');
+            }
+            setProductos( data.docs.map(prod => ({ id: prod.data().id, ...prod.data()})))
+        })
+    }, [prov])
+ 
+    return ( 
+        <>
+        <img src = "https://img.freepik.com/vector-gratis/ruta-ruta-linea-avion-punto-inicio-trazo-linea-trazos_166001-133.jpg?size=626&ext=jpg" alt = "Patagonizate logo" id = "logoAvion" />
+        <h1 id="titular">Tu proximo destino esta aqui</h1>
+        <ItemList produc = {productos}/> 
         </>
     );
 }
-

@@ -3,6 +3,8 @@
 @import './itemListContainer';
 @import './itemDetailContainer';
 @import './cart';
+@import './sobre';
+
 
 // App.js
 
@@ -28,6 +30,20 @@ div#provincias{
     }
     p:hover{
         color: #9197a7;
+    }
+}
+
+#logo{
+    @include imagenes(13rem, 13rem);
+    @include margin (1rem, 0rem, 1rem, 47rem);
+}
+
+// enlaces provincias
+
+div#provincias{
+    a{
+        text-decoration: none;
+        color: #151313;
     }
 }
 

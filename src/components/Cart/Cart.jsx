@@ -7,7 +7,7 @@ function Cart(){
 
     return(
         <>
-        {agregar.length == 0? 
+        {agregar.length === 0? 
                 <h1 id="carritoVacio">Carrito Vacio</h1>
                 :
                 <h1 id="carrito">Carrito</h1>}
@@ -40,7 +40,7 @@ function Cart(){
                 </div>
             </div>)}
             <div id="cartCentrar">
-                {agregar.length == 0? 
+                {agregar.length === 0? 
                 <Link to="/">
                 <button id="cartIrAlInicio" onClick={borrarListado}>ir al inicio</button>
                 </Link>

@@ -1,99 +1,66 @@
 // itemDetail, itemCount
 
 div.itemDetailContainer{
-    @include margin (0.5rem, 0rem, 0.5rem, 2rem);
+    @include margin (0.5rem, 0rem, 0rem, 2rem);
     display: flex;
     justify-content: center;
     div.itemDetailImg{
         img{
-            border-radius: 10px 0px 0px 10px;
-            @include imagenes(47rem, 48rem);
-            @include margin (0rem, 0rem, 0rem, 0rem);
+            @include imagenes(45rem, 37rem);
+            @include margin (4rem, 5rem, 0rem, 2rem);
         }
     }
     div.itemDetail{
         border-radius: 0px 10px 10px 0px;
         color: black;
         @include imagenes(60rem, 45rem);
-        background-color: #EBF0FF;
-        @include padding (2rem, 0rem, 1rem, 2rem);
-        @include margin (0rem, 3rem, 1rem, 0rem);
+        background-color: #ffffff;
+        @include padding (2rem, 0rem, 0rem, 2rem);
+        @include margin (0rem, 3rem, 0rem, 0rem);
         h3{
             text-align: center;
             color: rgb(8, 8, 8);
-            @include margin(1.3rem, 3rem, 0rem, 0rem);
-            font-size: 2.5rem;
+            @include margin(-0.5rem, 3rem, 0rem, 0rem);
+            font-size: 2rem;
         }
         p.descripcion{
             text-align: center;
-            font-size: 1rem;
-            @include padding (0rem, 3rem, 0.2rem, 1rem);
+            font-size: 0.8rem;
+            @include padding (0.5rem, 3rem, 0.2rem, 1rem);
         }
         label{
             font-size: 25px;
         }
         button{
-            background-color: #274156;
+            background-color: hsl(0, 0%, 100%);
             border-radius: 6px;
-            border: none;
-            color: rgb(255, 255, 255);
+            border: 1px solid #151313;
+            color: #151313;
+            transition: 0.4s;
+        }
+        button:hover{
+            background-color: #151313;
+            color: #ffffff;
         }
         button.sumar{
-            font-size: 20px;
+            font-size: 22px;
             @include imagenes(2rem, 2rem);
-            @include margin (2rem, 3rem, 0rem, 19.8rem);
+            @include margin (2rem, 2rem, 0rem, 19rem);
         }
         button.restar{
-            font-size: 20px;
+            font-size: 25px;
             @include imagenes(2rem, 2rem);
-            @include margin (0rem, 0rem, 0rem, 3rem);
-            z-index: 3;
+            @include margin (0rem, 0rem, 0rem, 2rem);
         }
         button.agregarAlCarrito{
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            @include imagenes(15rem, 2.8rem);
-            @include margin (2rem, 0rem, 0rem, 17.5rem);
+            @include imagenes(12rem, 2.8rem);
+            @include margin (2rem, 0rem, 0rem, 17.3rem);
             a{
                 text-decoration: none;
                 color: rgb(12, 156, 175);
             }
         }
-        // modal
-        // .modal{
-        //     background-color: rgba(255, 255, 255, 0.322);
-        //     position:fixed;
-        //     top:0;
-        //     right:0;
-        //     bottom:0;
-        //     left:0;
-        //     opacity:0;
-        //     pointer-events:none;
-        //     transition: all 0.6s;
-        //     .modal-contenido{
-        //         background-color:rgb(255, 255, 255);
-        //         @include imagenes(22.5rem, 13.5rem);
-        //         padding: 10px 20px;
-        //         margin: 20% auto;
-        //         position: relative;
-        //         box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.493);
-        //         border-radius: 5px;
-        //         p.agregado{
-        //             font-size: 2.2rem;
-        //             color: rgb(0, 0, 0);
-        //             text-shadow: none;
-        //             text-align: center;
-        //             @include margin(2rem, 0rem, 1rem, 0rem);
-        //         }
-        //         img#imgAgregado{
-        //             @include imagenes(8rem, 8rem);
-        //             @include margin(0rem, 2rem, 0rem, 7.5rem);
-        //         }
-        //       }
-        //   }
-        //   #miModal:target{
-        //     opacity:1;
-        //     pointer-events:auto;
-        //   }
     }
 }

@@ -1,0 +1,31 @@
+
+h1#tituloSobre{
+    text-align: center;
+    font-size: 2.5rem;
+    @include margin(1rem, 0rem, 2rem, 0rem);
+}
+
+
+div#sobre{
+    section{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        @include margin(2rem, 0rem, 2rem, 0rem);
+        img{
+            @include imagenes (45rem, 30rem);
+            @include margin(2rem, 0rem, 0rem, 13rem);
+        }
+        article{
+            font-size: 1.3rem;
+            font-style: italic;
+            text-align: center;
+            @include margin(5rem, 0rem, 5rem, 0rem);
+            @include padding (0rem, 32rem, 0rem, 35rem);
+        }
+        img#FotoPatagoniaSobre{
+            @include imagenes (48rem, 30rem);
+            @include margin(0rem, 0rem, 2rem, 50rem);
+        }
+    }
+}

@@ -1,8 +1,9 @@
 import Item from "./Item";
+import {memo} from 'react';
 
-function ItemList({produc}){
+const ItemList= memo(({produc}) =>{
 
-    const ItemList = produc.map((items) => <Item key={items.id} prod={items}/>)
+    const ItemList = produc.map((items) => <Item key={items.initial} prod={items}/>)
 
     return(
         <div className="item">
@@ -11,4 +12,5 @@ function ItemList({produc}){
     )
 
 }
+, (oldProps, newProps) => oldProps.produc.length === newProps.produc.length)
 export default ItemList
