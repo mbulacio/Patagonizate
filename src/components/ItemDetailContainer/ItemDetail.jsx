@@ -1,7 +1,12 @@
 import { useCartContext } from "../../Context/cartContext";
+import { getFirestore } from "../../service/getFirebase";
 import ItemCount from "./ItemCount";
 
 function ItemDetail({producto}) {
+
+    const baseDeDatos = getFirestore()
+
+    const actualizarDatos = baseDeDatos.collection('productos').doc(producto.id)
 
     const {agregarAlCarrito} = useCartContext()
 
@@ -10,6 +15,12 @@ function ItemDetail({producto}) {
         if(producto.cant < 4){
             producto.cant = state
             agregarAlCarrito(producto, state)
+            const act = actualizarDatos.update({
+                cant: state,
+                stock: producto.stock - state
+            });
+
+            console.log(act);
         }
         
     }

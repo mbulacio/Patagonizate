@@ -1,9 +1,53 @@
 import { useCartContext } from "../../Context/cartContext"
 import { Link } from 'react-router-dom';
+import { useState } from "react";
+import {getFirestore} from '../../service/getFirebase';
+import firebase from "firebase";
+import 'firebase/firestore'
+
+
+const initialState= {
+    nombre: '',
+    email: '',
+    tel: ''
+}
 
 function Cart(){
 
-    const {borrarListado, agregar, borrarItem} = useCartContext()
+    const [formularioCompra, setFormularioCompra] = useState(initialState)
+
+    const {borrarListado, agregar, borrarItem, total} = useCartContext()
+
+    console.log(total);
+
+    function cambioEnFormulario(e){
+        setFormularioCompra({
+            ...formularioCompra,
+            [e.target.name]: e.target.value
+        })
+        console.log(formularioCompra);
+    }
+
+    function TerminarCompra(e){
+        const pedido={
+            buyer:formularioCompra,
+            items: agregar,
+            date: firebase.firestore.Timestamp.fromDate(new Date())
+        }
+
+        console.log(pedido);
+
+        const baseDeDato = getFirestore()
+        const pedidos = baseDeDato.collection('pedidos')
+        pedidos.add(pedido)
+        .then(e => console.log(e))
+        .catch(err => console.log(err))
+        .finally(()=>{
+            setFormularioCompra(initialState)
+            borrarListado()
+        })
+        
+    }
 
     return(
         <>
@@ -39,6 +83,10 @@ function Cart(){
                     <hr/>
                 </div>
             </div>)}
+            <div id="totalCart">
+                <p>Total</p>
+                <p>{total()}</p>
+            </div>
             <div id="cartCentrar">
                 {agregar.length === 0? 
                 <Link to="/">
@@ -47,7 +95,17 @@ function Cart(){
                 :
                 <button id="cartBorrarCarrito" onClick={borrarListado}> Vaciar Carrito</button>}
             </div>
-        </>
+            <div>
+                <form
+                onSubmit={TerminarCompra}
+                onChange={cambioEnFormulario}>
+                    <input type="text" placeholder="Ingresa tu nombre" name="nombre" value={formularioCompra.nombre}/>
+                    <input type="tel" placeholder="Ingresa tu tel" name="tel" value={formularioCompra.tel}/>
+                    <input type="email" placeholder="Ingresa tu email" name="email" value={formularioCompra.email}/>
+                    <button>Terminar compra</button>
+                </form>
+            </div>
+        </>   
     )
 }
 

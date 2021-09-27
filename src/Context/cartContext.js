@@ -17,7 +17,8 @@ function CartContextProvider({children}) {
             }
         }else{
             setAgregar([...agregar, producto])
-        }  
+        }
+
     }
 
     const EnCarrito = (id) => {
@@ -33,6 +34,10 @@ function CartContextProvider({children}) {
         setAgregar([])
     }
 
+    const total = () => {
+        return agregar.reduce((acum, valor) => (acum + (valor.cant * valor.price)), 0)
+    }
+
     console.log(agregar); 
 
     return (
@@ -40,7 +45,8 @@ function CartContextProvider({children}) {
             agregar,
             agregarAlCarrito,
             borrarListado,
-            borrarItem
+            borrarItem,
+            total
         }}>
             {children}
         </CartContext.Provider>
