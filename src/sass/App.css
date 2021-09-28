@@ -305,7 +305,7 @@ h1#carrito {
   text-align: center;
 }
 
-div#acomodarCart div.ordenarCart {
+div.ordenarCart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,7 +319,7 @@ div#acomodarCart div.ordenarCart {
   margin: 3rem 0rem 2rem 0rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail {
+div.ordenarCart div.cartDetail {
   color: white;
   width: 25rem;
   height: 18rem;
@@ -329,7 +329,7 @@ div#acomodarCart div.ordenarCart div.cartDetail {
   text-align: center;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail div {
+div.ordenarCart div.cartDetail div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,46 +340,46 @@ div#acomodarCart div.ordenarCart div.cartDetail div {
   margin: 0.8rem 0rem 0rem 0rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail div h2 {
+div.ordenarCart div.cartDetail div h2 {
   margin: 0.4rem 0rem 0rem 0rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail div hr.hrVertical {
+div.ordenarCart div.cartDetail div hr.hrVertical {
   width: 0.5rem;
   height: 2.5rem;
   margin: 0rem 1rem 0rem 4.2rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail div p {
+div.ordenarCart div.cartDetail div p {
   color: white;
   font-weight: bolder;
   margin: 0.5rem 0rem 0rem 4.7rem;
   font-size: 1.3rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail h3 strong {
+div.ordenarCart div.cartDetail h3 strong {
   margin: 0rem 0rem 0rem 0rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail p strong {
+div.ordenarCart div.cartDetail p strong {
   font-size: 1.2rem;
   margin: 0rem 0rem 0rem 0rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail div#cartCancelar p {
+div.ordenarCart div.cartDetail div#cartCancelar p {
   color: white;
   font-weight: bolder;
   margin: 0.2rem 0rem 0rem 7.5rem;
   font-size: 1.1rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartDetail div#cartCancelar img.cartCancel {
+div.ordenarCart div.cartDetail div#cartCancelar img.cartCancel {
   width: 2rem;
   height: 2rem;
   margin: 0rem 0rem 0.5rem 1rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartLateralDerecho {
+div.ordenarCart div.cartLateralDerecho {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -401,19 +401,19 @@ div#acomodarCart div.ordenarCart div.cartLateralDerecho {
   transition: 0.2s ease-in-out;
 }
 
-div#acomodarCart div.ordenarCart div.cartLateralDerecho p {
+div.ordenarCart div.cartLateralDerecho p {
   color: white;
   margin: 0.2rem 0rem 0rem 0rem;
   font-weight: bolder;
 }
 
-div#acomodarCart div.ordenarCart div.cartLateralDerecho img.cartImgAvion {
+div.ordenarCart div.cartLateralDerecho img.cartImgAvion {
   margin: 1rem 0rem 1rem 1.7rem;
   width: 7rem;
   height: 7rem;
 }
 
-div#acomodarCart div.ordenarCart div.cartLateralDerecho hr {
+div.ordenarCart div.cartLateralDerecho hr {
   width: 8rem;
   height: 0.5rem;
   background-color: #1d437e;
@@ -422,11 +422,11 @@ div#acomodarCart div.ordenarCart div.cartLateralDerecho hr {
   margin: 0.5rem 0rem 0rem 1rem;
 }
 
-div#acomodarCart div.ordenarCart:hover div.cartLateralDerecho {
+div.ordenarCart:hover div.cartLateralDerecho {
   margin: 0rem 0rem 0rem 1.2rem;
 }
 
-div#cartCentrar {
+div.cartCentrar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -435,11 +435,11 @@ div#cartCentrar {
           justify-content: center;
 }
 
-div#cartCentrar button#cartBorrarCarrito {
+div.cartCentrar button#cartBorrarCarrito {
   margin: 1rem 0rem 0rem 0rem;
   width: 30rem;
   height: 3.5rem;
-  background-color: #da1a1a;
+  background-color: #f34b4b;
   color: white;
   font-size: 1.5rem;
   border: none;
@@ -448,13 +448,17 @@ div#cartCentrar button#cartBorrarCarrito {
   transition: 0.5s;
 }
 
-div#cartCentrar button#cartBorrarCarrito:hover {
+div.cartCentrar button#cartBorrarCarrito:hover {
   color: black;
   -webkit-box-shadow: 1px 1px 14px 7px #b9b9b9;
           box-shadow: 1px 1px 14px 7px #b9b9b9;
 }
 
-div#cartCentrar button#cartIrAlInicio {
+a {
+  text-decoration: none;
+}
+
+a div.cartCentrar button#cartIrAlInicio {
   margin: 1rem 0rem 0rem 0rem;
   width: 25rem;
   height: 3.5rem;
@@ -467,7 +471,7 @@ div#cartCentrar button#cartIrAlInicio {
   transition: 0.5s;
 }
 
-div#cartCentrar button#cartIrAlInicio:hover {
+a div.cartCentrar button#cartIrAlInicio:hover {
   color: #4b4b4b;
   -webkit-box-shadow: 1px 1px 14px 5px rgba(39, 39, 39, 0.281);
           box-shadow: 1px 1px 14px 5px rgba(39, 39, 39, 0.281);
@@ -509,26 +513,56 @@ div#totalCart:hover {
   color: white;
 }
 
-div form {
+div#form form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-div form input {
+div#form form h1 {
+  text-align: center;
+}
+
+div#form form input {
   width: 35rem;
   height: 3.2rem;
-  margin: 2rem 0rem 1rem 35rem;
+  margin: 1.5rem 0rem 1rem 35rem;
   text-align: center;
-  border: 0px solid #151313;
+  border: 1px solid #151313;
   border-radius: 7px;
   font-size: 1rem;
-  background-color: #EBF0FF;
+  background-color: #ffffff;
   font-family: 'Comfortaa', cursive;
+}
+
+div#form form input:hover {
+  background-color: #151313;
+}
+
+div#form form button {
+  width: 30rem;
+  height: 3.5rem;
+  background-color: #5fa4ff;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin: 2rem 0rem 1rem 38rem;
+}
+
+div#form form button:hover {
+  color: black;
+  -webkit-box-shadow: 1px 1px 14px 7px #b9b9b9;
+          box-shadow: 1px 1px 14px 7px #b9b9b9;
 }
 
 h1#tituloSobre {

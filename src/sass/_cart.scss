@@ -8,8 +8,7 @@ h1#carrito{
     text-align: center;
 }
 
-div#acomodarCart{
-    div.ordenarCart{
+div.ordenarCart{
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -94,18 +93,18 @@ div#acomodarCart{
             @include margin(0rem, 0rem, 0rem, 1.2rem);
         }
     }
-}
 
 
 
 
-div#cartCentrar{
+
+div.cartCentrar{
     display: flex;
     justify-content: center;
     button#cartBorrarCarrito{
         @include margin(1rem, 0rem, 0rem, 0rem);
         @include imagenes(30rem, 3.5rem);
-        background-color: rgb(218, 26, 26);
+        background-color: rgb(243, 75, 75);
         color: white;
         font-size: 1.5rem;
         border: none;
@@ -116,19 +115,25 @@ div#cartCentrar{
         color: rgb(0, 0, 0);
         box-shadow: 1px 1px 14px 7px rgb(185, 185, 185);
     }
-    button#cartIrAlInicio{
-        @include margin(1rem, 0rem, 0rem, 0rem);
-        @include imagenes(25rem, 3.5rem);
-        background-color: rgb(26, 218, 132);
-        color: white;
-        font-size: 1.5rem;
-        border: none;
-        border-radius: 0.5rem;
-        transition: 0.5s;
-    }
-    button#cartIrAlInicio:hover{
-        color: rgb(75, 75, 75);
-        box-shadow: 1px 1px 14px 5px rgba(39, 39, 39, 0.281);
+}
+
+a{
+    text-decoration: none;
+    div.cartCentrar{
+        button#cartIrAlInicio{
+            @include margin(1rem, 0rem, 0rem, 0rem);
+            @include imagenes(25rem, 3.5rem);
+            background-color: rgb(26, 218, 132);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            transition: 0.5s;
+        }
+        button#cartIrAlInicio:hover{
+            color: rgb(75, 75, 75);
+            box-shadow: 1px 1px 14px 5px rgba(39, 39, 39, 0.281);
+        }
     }
 }
 
@@ -158,19 +163,40 @@ div#totalCart:hover{
     color: white;
 }
 
-div{
+div#form{
     form{
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: column nowrap;
+        justify-content: center;
+        h1{
+            text-align: center;
+        }
         input{
             @include imagenes(35rem, 3.2rem);
-            @include margin (2rem, 0rem, 1rem, 35rem);
+            @include margin (1.5rem, 0rem, 1rem, 35rem);
             text-align: center;
-            border: 0px solid #151313;
+            border: 1px solid #151313;
             border-radius: 7px;
             font-size: 1rem;
-            background-color: #EBF0FF;
+            background-color: #ffffff;
             font-family: 'Comfortaa', cursive;
+        }
+        input:hover{
+            background-color: #151313;
+        }
+        button{
+            @include imagenes(30rem, 3.5rem);
+            background-color: rgb(95, 164, 255);
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            transition: 0.5s;
+            @include margin (2rem, 0rem, 1rem, 38rem);
+        }
+        button:hover{
+            color: rgb(0, 0, 0);
+            box-shadow: 1px 1px 14px 7px rgb(185, 185, 185);
         }
     }
 }

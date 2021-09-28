@@ -29,6 +29,8 @@ function Cart(){
     }
 
     function TerminarCompra(e){
+        e.preventDefault()
+
         const pedido={
             buyer:formularioCompra,
             items: agregar,
@@ -51,11 +53,20 @@ function Cart(){
 
     return(
         <>
-        {agregar.length === 0? 
+        
+            
+                {agregar.length === 0?
+                <>
                 <h1 id="carritoVacio">Carrito Vacio</h1>
+                <Link to="/">
+                <div className="cartCentrar">
+                    <button id="cartIrAlInicio" onClick={borrarListado}>ir al inicio</button>
+                </div>
+                </Link>
+                </>
                 :
-                <h1 id="carrito">Carrito</h1>}
-                <div id="acomodarCart"> 
+                <> 
+                <h1 id="carrito">Carrito</h1>
                 {agregar.map((items) => 
                 <div className="ordenarCart" key={items.id}> 
                     <div className="cartDetail">
@@ -84,29 +95,25 @@ function Cart(){
                         <hr/>
                     </div>
                 </div>)}
-            </div>
-            <div id="totalCart">
-                <p>Total:</p>
-                <p>${total()}</p>
-            </div>
-            <div>
+                <div id="totalCart">
+                        <p>Total:</p>
+                        <p>${total()}</p>
+                    </div>
+                    <div id="form">
                 <form
-                onSubmit={TerminarCompra}
-                onChange={cambioEnFormulario}>
-                    <input type="text" placeholder="Ingresa tu nombre" name="nombre" value={formularioCompra.nombre}/>
-                    <input type="tel" placeholder="Ingresa tu tel" name="tel" value={formularioCompra.tel}/>
-                    <input type="email" placeholder="Ingresa tu email" name="email" value={formularioCompra.email}/>
-                    <button>Terminar compra</button>
-                    <div id="cartCentrar">
-                {agregar.length === 0? 
-                <Link to="/">
-                <button id="cartIrAlInicio" onClick={borrarListado}>ir al inicio</button>
-                </Link>
-                :
-                <button id="cartBorrarCarrito" onClick={borrarListado}> Vaciar Carrito</button>}
-            </div>
+                    onSubmit={TerminarCompra}
+                    onChange={cambioEnFormulario}>
+                        <h1>Datos para compra</h1>
+                        <input type="text" placeholder="Ingresa tu nombre" name="nombre" value={formularioCompra.nombre}/>
+                        <input type="tel" placeholder="Ingresa tu tel" name="tel" value={formularioCompra.tel}/>
+                        <input type="email" placeholder="Ingresa tu email" name="email" value={formularioCompra.email}/>
+                        <button>Terminar compra</button>
                 </form>
             </div>
+                    <div className="cartCentrar">
+                    <button id="cartBorrarCarrito" onClick={borrarListado}> Vaciar Carrito</button>
+                    </div>
+                </>}
             
             
         </>   

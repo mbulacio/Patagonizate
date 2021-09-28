@@ -45,7 +45,7 @@ function ItemDetail({producto}) {
                     </article>
                 </section>
                 <h3>${producto.price}</h3>
-                <p className="descripcion">Max. por paquete: {producto.stock} personas</p>
+                <p className="descripcion">Max. por paquete: 4 personas</p>
                 <ItemCount stock={producto.stock} initial={1} onAdd={onAdd}/>
             </div>
         </>
