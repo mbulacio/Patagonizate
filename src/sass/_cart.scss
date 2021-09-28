@@ -8,92 +8,96 @@ h1#carrito{
     text-align: center;
 }
 
-div.ordenarCart{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    @include margin(3rem, 0rem, 2rem, 0rem);
-    div.cartDetail{
-        color: white;
-        @include imagenes(25rem, 18rem);
-        background-color: #5da5f3;
-        border-right: 3px dotted rgb(255, 255, 255);
-        border-radius: 1rem 0rem 0rem 1rem;
-        text-align: center;
-        div{
+div#acomodarCart{
+    div.ordenarCart{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        @include margin(3rem, 0rem, 2rem, 0rem);
+        div.cartDetail{
+            color: white;
+            @include imagenes(25rem, 18rem);
+            background-color: #5da5f3;
+            border-right: 3px dotted rgb(255, 255, 255);
+            border-radius: 1rem 0rem 0rem 1rem;
+            text-align: center;
+            div{
+                display: flex;
+                flex-flow: row;
+                @include margin(0.8rem, 0rem, 0rem, 0rem);
+                h2{
+                    @include margin(0.4rem, 0rem, 0rem, 0rem);
+                }
+                hr.hrVertical{
+                    @include imagenes(0.5rem, 2.5rem);
+                    @include margin(0rem, 1rem, 0rem, 4.2rem);
+                }
+                p{
+                    color: white;
+                    font-weight: bolder;
+                    @include margin(0.5rem, 0rem, 0rem, 4.7rem);
+                    font-size: 1.3rem;
+                }
+            } 
+            h3 strong{
+                @include margin(0rem, 0rem, 0rem, 0rem);
+            }
+            p strong{
+                font-size: 1.2rem;
+                @include margin(0rem, 0rem, 0rem, 0rem);
+            }
+            div#cartCancelar{
+                p{
+                    color: white;
+                    font-weight: bolder;
+                    @include margin(0.2rem, 0rem, 0rem, 7.5rem);
+                    font-size: 1.1rem;
+                }
+                img.cartCancel{
+                    @include imagenes(2rem, 2rem);
+                    @include margin(0rem, 0rem, 0.5rem, 1rem);
+                }
+            }
+        }
+        div.cartLateralDerecho{
             display: flex;
-            flex-flow: row;
-            @include margin(0.8rem, 0rem, 0rem, 0rem);
-            h2{
-                @include margin(0.4rem, 0rem, 0rem, 0rem);
-            }
-            hr.hrVertical{
-                @include imagenes(0.5rem, 2.5rem);
-                @include margin(0rem, 1rem, 0rem, 4.2rem);
-            }
+            flex-flow: column wrap;
+            justify-content: center;
+            @include margin(0rem, 0rem, 0rem, 0.1rem);
+            @include imagenes(10rem, 18rem);
+            border-left: 3px dotted rgb(255, 255, 255);
+            border-radius: 0rem 1rem 1rem 0rem;
+            text-align: center;
+            background-color: #3482D5;
+            // transicion hover
+            transition: 0.2s ease-in-out;
             p{
                 color: white;
+                @include margin(0.2rem, 0rem, 0rem, 0rem);
                 font-weight: bolder;
-                @include margin(0.5rem, 0rem, 0rem, 4.7rem);
-                font-size: 1.3rem;
             }
-        } 
-        h3 strong{
-            @include margin(0rem, 0rem, 0rem, 0rem);
-        }
-        p strong{
-            font-size: 1.2rem;
-            @include margin(0rem, 0rem, 0rem, 0rem);
-        }
-        div#cartCancelar{
-            p{
-                color: white;
-                font-weight: bolder;
-                @include margin(0.2rem, 0rem, 0rem, 7.5rem);
-                font-size: 1.1rem;
+            img.cartImgAvion{
+                @include margin(1rem, 0rem, 1rem, 1.7rem);
+                @include imagenes(7rem, 7rem);
             }
-            img.cartCancel{
-                @include imagenes(2rem, 2rem);
-                @include margin(0rem, 0rem, 0.5rem, 1rem);
+            hr{
+                @include imagenes(8rem, 0.5rem);
+                background-color: #1d437e;
+                border-radius: 1rem;
+                border:none;
+                @include margin(0.5rem, 0rem, 0rem, 1rem);
             }
         }
     }
-    div.cartLateralDerecho{
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        @include margin(0rem, 0rem, 0rem, 0.1rem);
-        @include imagenes(10rem, 18rem);
-        border-left: 3px dotted rgb(255, 255, 255);
-        border-radius: 0rem 1rem 1rem 0rem;
-        text-align: center;
-        background-color: #3482D5;
-        // transicion hover
-        transition: 0.2s ease-in-out;
-        p{
-            color: white;
-            @include margin(0.2rem, 0rem, 0rem, 0rem);
-            font-weight: bolder;
-        }
-        img.cartImgAvion{
-            @include margin(1rem, 0rem, 1rem, 1.7rem);
-            @include imagenes(7rem, 7rem);
-        }
-        hr{
-            @include imagenes(8rem, 0.5rem);
-            background-color: #1d437e;
-            border-radius: 1rem;
-            border:none;
-            @include margin(0.5rem, 0rem, 0rem, 1rem);
+    div.ordenarCart:hover{
+        div.cartLateralDerecho{
+            @include margin(0rem, 0rem, 0rem, 1.2rem);
         }
     }
 }
 
-div.ordenarCart:hover{
-    div.cartLateralDerecho{
-        @include margin(0rem, 0rem, 0rem, 1.2rem);
-    }
-}
+
+
 
 div#cartCentrar{
     display: flex;
@@ -134,4 +138,39 @@ hr{
     border-radius: 1rem;
     border:none;
     @include margin(0rem, 0rem, 0rem, 1rem);
+}
+
+div#totalCart{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+    border: 1px solid black;
+    @include imagenes(100%, 4rem);
+    p{
+        font-size: 2rem;
+        @include margin (1rem, 0rem, 0rem, 0rem);
+    }
+}
+
+div#totalCart:hover{
+    background-color: #151313;
+    color: white;
+}
+
+div{
+    form{
+        display: flex;
+        flex-flow: column wrap;
+        input{
+            @include imagenes(35rem, 3.2rem);
+            @include margin (2rem, 0rem, 1rem, 35rem);
+            text-align: center;
+            border: 0px solid #151313;
+            border-radius: 7px;
+            font-size: 1rem;
+            background-color: #EBF0FF;
+            font-family: 'Comfortaa', cursive;
+        }
+    }
 }
