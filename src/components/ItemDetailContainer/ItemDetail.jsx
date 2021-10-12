@@ -11,16 +11,13 @@ function ItemDetail({producto}) {
     const {agregarAlCarrito} = useCartContext()
 
     const onAdd = (state) => {
-        // cantidad 
-        if(producto.cant < 4){
+        if(producto.cant < 4 || producto.stock > 0){
             producto.cant = state
             agregarAlCarrito(producto, state)
-            const act = actualizarDatos.update({
+            actualizarDatos.update({
                 cant: state,
                 stock: producto.stock - state
             });
-
-            console.log(act);
         }
         
     }
@@ -44,9 +41,20 @@ function ItemDetail({producto}) {
                         <p className="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quos nesciunt saepe. Fugit maiores ea expedita officia, natus veniam, excepturi ex optio.</p>
                     </article>
                 </section>
+                
+                {producto.stock <= 0 ? 
+                <>
+                <div>
+                <p className="prodAgotado"><strong>SOLD OUT</strong></p>    
+                </div>
+                </>
+                :
+                <>
                 <h3>${producto.price}</h3>
                 <p className="descripcion">Max. por paquete: 4 personas</p>
-                <ItemCount stock={producto.stock} initial={1} onAdd={onAdd}/>
+                <ItemCount stock={4} initial={1} onAdd={onAdd}/>
+                </>}
+                
             </div>
         </>
     )

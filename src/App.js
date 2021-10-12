@@ -1,13 +1,17 @@
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import NavBar from './components/NavBar';
+
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import Cart from './components/Cart/Cart';
+import NavBar from './components/NavBar';
 import ImagenPrincipal from './components/PaginaPrincipal/ImagenPrincipal';
+import Sobre from './components/SobrePatagonia/sobre';
+import Cart from './components/Cart/Cart';
 import CartContextProvider from './Context/cartContext';
 
 import './sass/App.css';
-import Sobre from './components/SobrePatagonia/sobre';
+import Reviews from './components/Reviews/reviews';
+import Contacto from './components/Contacto/contacto';
+
 
 function App() {
 
@@ -22,7 +26,10 @@ function App() {
               <Route exact path='/'>
               <ImagenPrincipal/>
               <Sobre/>
-              <ItemListContainer title="PAQUETES" titleDos="HOTELES" titleTres="EXCURSIONES"/>
+              <ItemListContainer title="PAQUETES" titleDos="HOTELES" titleTres="EXCURSIONES"/
+              >
+              <Reviews/>
+              <Contacto/>
               </Route>
               
               <Route exact path='/categoria/:category' component={ItemListContainer}/>

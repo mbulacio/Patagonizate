@@ -1,31 +1,134 @@
-
-h1#tituloSobre{
+h1#tituloSobre {
     text-align: center;
-    font-size: 2.5rem;
-    @include margin(1rem, 0rem, 2rem, 0rem);
 }
 
 
-div#sobre{
-    section{
+div#sobre {
+    section {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        @include margin(2rem, 0rem, 2rem, 0rem);
-        img{
-            @include imagenes (45rem, 30rem);
-            @include margin(2rem, 0rem, 0rem, 13rem);
-        }
-        article{
-            font-size: 1.3rem;
+
+        article {
             font-style: italic;
             text-align: center;
-            @include margin(5rem, 0rem, 5rem, 0rem);
-            @include padding (0rem, 32rem, 0rem, 35rem);
         }
-        img#FotoPatagoniaSobre{
-            @include imagenes (48rem, 30rem);
-            @include margin(0rem, 0rem, 2rem, 50rem);
+    }
+}
+
+@media (min-width: 300px) and (max-width: 399px){
+    h1#tituloSobre {
+        font-size: 0.9rem;
+        @include margin(0.5rem, 0rem, 0rem, 0rem);
+    }
+
+    div#sobre {
+        section {
+            @include margin(0.8rem, 0rem, 2rem, 0rem);
+
+            img {
+                @include imagenes (15rem, 9rem);
+                @include margin(0rem, 0rem, 0rem, 1rem);
+            }
+
+            article {
+                font-size: 0.8rem;
+                @include margin(1rem, 0rem, 1rem, 0rem);
+                @include padding (0rem, 3rem, 0rem, 3rem);
+            }
+
+            img#FotoPatagoniaSobre {
+                @include imagenes (15rem, 9rem);
+                @include margin(0rem, 0rem, 0rem, 6.5rem);
+            }
+        }
+    }
+}
+
+@media (min-width: 400px) and (max-width: 760px){
+    h1#tituloSobre {
+        font-size: 0.9rem;
+        @include margin(0.5rem, 0rem, 1rem, 0rem);
+    }
+
+    div#sobre {
+        section {
+            @include margin(0rem, 0rem, 2rem, 0rem);
+
+            img {
+                @include imagenes (17.5rem, 11rem);
+                @include margin(0rem, 0rem, 0rem, 1.2rem);
+            }
+
+            article {
+                font-size: 0.75rem;
+                @include margin(1rem, 0rem, 1rem, 0rem);
+                @include padding (0rem, 4rem, 0rem, 4rem);
+            }
+
+            img#FotoPatagoniaSobre {
+                @include imagenes (17.5rem, 11rem);
+                @include margin(0rem, 0rem, 0rem, 7.1rem);
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 959px){
+    h1#tituloSobre {
+        font-size: 1.8rem;
+        @include margin(0.5rem, 0rem, 2rem, 0rem);
+    }
+
+    div#sobre {
+        section {
+            @include margin(1rem, 0rem, 0rem, 0rem);
+
+            img {
+                @include imagenes (32rem, 22rem);
+                @include margin(0.5rem, 0rem, 0rem, 2rem);
+            }
+
+            article {
+                font-size: 1.3rem;
+                @include margin(3rem, 0rem, 3rem, 0rem);
+                @include padding (0rem, 6rem, 0rem, 6rem);
+            }
+
+            img#FotoPatagoniaSobre {
+                @include imagenes (32rem, 22rem);
+                @include margin(0rem, 0rem, 2rem, 14rem);
+            }
+        }
+    }
+}
+
+
+@media (min-width: 960px) and (max-width: 1399.98px) {
+    h1#tituloSobre {
+        font-size: 2rem;
+        @include margin(1rem, 0rem, 1.5rem, 0rem);
+    }
+
+    div#sobre {
+        section {
+            @include margin(2rem, 0rem, 2rem, 0rem);
+
+            img {
+                @include imagenes (40rem, 25rem);
+                @include margin(1rem, 0rem, 0rem, 5rem);
+            }
+
+            article {
+                font-size: 1.3rem;
+                @include margin(5rem, 0rem, 5rem, 0rem);
+                @include padding (0rem, 15rem, 0rem, 15rem);
+            }
+
+            img#FotoPatagoniaSobre {
+                @include imagenes (40rem, 25rem);
+                @include margin(0rem, 0rem, 1rem, 24rem);
+            }
         }
     }
 }

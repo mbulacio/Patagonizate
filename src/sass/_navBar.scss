@@ -1,50 +1,175 @@
-.navBar{
+.navBar {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
     font-weight: bold;
-    letter-spacing: 0.2rem;
-    @include imagenes (100%, 10vh);
-    font-size: 130%;
-    @include padding (0rem, 2rem, 0rem, 0rem);
-    a{
+
+    a {
         text-decoration: none;
         color: #151313;
         @include margin (0rem, 0rem, 0rem, 0rem);
     }
-    p{
+
+    p {
         @include margin (0rem, 0rem, 0rem, 0rem);
     }
-    div#sinIcon{
-        @include imagenes (4rem, 3.2rem);
-    }
-    img#cartWidgetCarrito{
-        @include imagenes (4rem, 3.2rem);
+
+    img#cartWidgetCarrito {
         position: relative;
     }
-    button{
+
+    button {
         position: absolute;
-        @include imagenes (1.4rem, 1.4rem);
-        @include margin (0rem, 0rem, 0rem, -1rem);
-        border-radius: 10px;
         border: none;
         background-color: #274156;
         font-weight: bold;
-        font-size: 1rem;
         color: #EBF0FF;
     }
-    img#patagonizateTitulo{
-        @include imagenes (15rem, 4.5rem);
-        @include margin (0.2rem, 0rem, 0rem, 0rem);
-    }
-}
 
-.navBar{
-    div{
+    div {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-evenly;
     }
-    
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+    .navBar {
+        @include imagenes (100%, 8vh);
+        font-size: 0.67rem;
+        @include margin (0rem, 0rem, 0rem, 0rem);
+        @include padding (0rem, 0rem, 0rem, 0rem);
+        p{
+            @include margin (2.4rem, 0rem, 0rem, 0rem);
+        }
+        div#sinIcon {
+            @include imagenes (2.2rem, 1.6rem);
+            @include margin (1.5rem, -0.3rem, 0rem, -0.2rem);
+        }
+
+        img#cartWidgetCarrito {
+            @include imagenes (2.2rem, 1.6rem);
+            @include margin (1.5rem, -0.3rem, 0rem, -0.2rem);
+        }
+
+        button {
+            @include imagenes (0.88rem, 0.85rem);
+            @include margin (1.4rem, 0rem, 0rem, -2.1rem);
+            @include padding (0.1rem, 0.01rem, 0rem, 0rem);
+            border-radius: 15px;
+            font-size: 0.7rem;
+        }
+
+        img#patagonizateTitulo {
+            @include imagenes (7.5rem, 1.9rem);
+            @include margin (0rem, -3.7rem, 0rem, -3.8rem);
+        }
+    }
+}
+
+// phones
+
+@media (min-width: 400px) and (max-width: 760px) {
+    .navBar {
+        @include imagenes (100%, 9vh);
+        font-size: 0.75rem;
+        @include margin (0rem, 0rem, 0rem, 0rem);
+        @include padding (0rem, 0rem, 0rem, 0rem);
+        p{
+            @include margin (2.3rem, 0rem, 0rem, 0rem);
+            @include padding (0rem, 0rem, 0rem, -0.5rem);
+        }
+        div#sinIcon {
+            @include imagenes (2.2rem, 1.6rem);
+            @include margin (1.6rem, -0.4rem, 0rem, -0.2rem);
+        }
+
+        img#cartWidgetCarrito {
+            @include imagenes (2.2rem, 1.6rem);
+            @include margin (1.6rem, -0.4rem, 0rem, -0.2rem);
+        }
+
+        button {
+            @include imagenes (0.88rem, 0.85rem);
+            @include margin (1.4rem, 0rem, 0rem, -2rem);
+            @include padding (0.1rem, 0.01rem, 0rem, 0rem);
+            border-radius: 15px;
+            font-size: 0.7rem;
+        }
+
+        img#patagonizateTitulo {
+            @include imagenes (8.7rem, 2.2rem);
+            @include margin (-0.7rem, -5.1rem, 0rem, -4rem);
+        }
+    }
+}
+
+// tablet
+
+@media (min-width: 767px) and (max-width: 959px) {
+    .navBar {
+        @include imagenes (100%, 6vh);
+        font-size: 100%;
+        @include padding (0rem, 0rem, 0rem, 0rem);
+
+        div#sinIcon {
+            @include imagenes (3.2rem, 2.5rem);
+            @include margin (0rem, 0rem, 0rem, -0.3rem);
+        }
+
+        img#cartWidgetCarrito {
+            @include imagenes (3rem, 2.2rem);
+            @include margin (-0.4rem, -0.3rem, 0rem, -0.5rem);
+        }
+
+        button {
+            @include imagenes (1.2rem, 1.2rem);
+            @include margin (-0.4rem, 0rem, 0rem, -0.8rem);
+            @include padding (0.02rem, 0rem, 0rem, 0rem);
+            border-radius: 15px;
+            font-size: 1rem;
+        }
+
+        img#patagonizateTitulo {
+            @include imagenes (9.5rem, 3rem);
+            @include margin (0.6rem, 0rem, 0rem, 0rem);
+        }
+    }
+}
+
+// desktops
+
+@media (min-width: 960px) and (max-width: 1399.98px){
+    .navBar {
+        @include imagenes (100%, 11vh);
+        font-size: 1.2rem;
+        @include padding (0rem, 0rem, 0rem, 0rem);
+        p{
+            @include margin (0rem, 0rem, 0rem, 0rem);
+            @include padding (0rem, 0rem, 0rem, -0.5rem);
+        }
+        div#sinIcon {
+            @include imagenes (3rem, 2.7rem);
+            @include margin (0.2rem, 0.3rem, 0rem, -1rem);
+        }
+
+        img#cartWidgetCarrito {
+            @include imagenes (4rem, 2.9rem);
+            @include margin (0rem, -0.3rem, 0rem, -0.5rem);
+        }
+
+        button {
+            @include imagenes (1.3rem, 1.3rem);
+            @include margin (0rem, 0rem, 0rem, -0.9rem);
+            @include padding (0rem, 0rem, 0rem, 0rem);
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+
+        img#patagonizateTitulo {
+            @include imagenes (12rem, 3.5rem);
+            @include margin (0.8rem, 0rem, 0rem, 0rem);
+        }
+    }
 }

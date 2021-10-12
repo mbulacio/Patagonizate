@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/cartContext";
 
 export function CartWidget(){
+
     const {agregar} = useCartContext()
+    
     return(
         <>
             <Link to="/cart">

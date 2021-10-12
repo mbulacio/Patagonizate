@@ -1,202 +1,756 @@
 //cart.jsx, cartContext
 
-h1#carritoVacio{
+h1#carritoVacio {
     text-align: center;
 }
 
-h1#carrito{
+h1#carrito {
     text-align: center;
 }
 
-div.ordenarCart{
+div.ordenarCart {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    div.cartDetail {
+        color: white;
+        background-color: #5da5f3;
+        border-right: 3px dotted rgb(255, 255, 255);
+        text-align: center;
+
+        div {
+            display: flex;
+            flex-flow: row;
+
+            p {
+                color: white;
+                font-weight: bolder;
+            }
+        }
+
+        div#cartCancelar {
+            p {
+                color: white;
+                font-weight: bolder;
+            }
+        }
+    }
+
+    div.cartLateralDerecho {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: column wrap;
         justify-content: center;
-        @include margin(3rem, 0rem, 2rem, 0rem);
-        div.cartDetail{
+        border-left: 3px dotted rgb(255, 255, 255);
+        text-align: center;
+        background-color: #3482D5;
+
+        p {
             color: white;
-            @include imagenes(25rem, 18rem);
-            background-color: #5da5f3;
-            border-right: 3px dotted rgb(255, 255, 255);
-            border-radius: 1rem 0rem 0rem 1rem;
+            font-weight: bolder;
+        }
+
+        hr {
+            background-color: #1d437e;
+            border: none;
+        }
+    }
+}
+
+div.cartCentrar {
+    display: flex;
+    justify-content: center;
+
+    button#cartBorrarCarrito {
+        background-color: rgb(243, 75, 75);
+        color: white;
+        border: none;
+    }
+
+    button#cartBorrarCarrito:hover {
+        box-shadow: 1px 1px 14px 7px rgb(185, 185, 185);
+    }
+}
+
+a {
+    text-decoration: none;
+
+    div.cartCentrar {
+        button#cartIrAlInicio {
+            background-color: rgb(26, 218, 132);
+            color: white;
+            border: none;
+        }
+
+        button#cartIrAlInicio:hover {
+            color: rgb(75, 75, 75);
+        }
+    }
+}
+
+hr {
+    background-color: #1d437e;
+    border: none;
+}
+
+div#totalCart {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+    border-top: 1px solid #151313;
+    border-bottom: 1px solid #151313;
+}
+
+
+div#form {
+    form {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        h1 {
             text-align: center;
-            div{
-                display: flex;
-                flex-flow: row;
+        }
+
+        input {
+            text-align: center;
+            background-color: #ffffff;
+            font-family: 'Comfortaa', cursive;
+        }
+
+        button {
+            background-color: rgb(95, 164, 255);
+            color: white;
+            border: none;
+
+        }
+    }
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+
+    h1#carrito {
+        @include margin(1rem, 0rem, 0rem, 0rem);
+    }
+
+    h1#carritoVacio {
+        @include margin(1rem, 0rem, 0rem, 0rem);
+    }
+
+    div.ordenarCart {
+        @include margin(1rem, 0rem, 0rem, 0rem);
+
+        div.cartDetail {
+            @include imagenes(13rem, 13.5rem);
+            border-radius: 0.5rem 0rem 0rem 0.5rem;
+
+            div {
+                @include margin(0.85rem, 0rem, 0rem, 0rem);
+
+                h2 {
+                    font-size: 1rem;
+                    @include margin(0.3rem, 0rem, 0rem, 0rem);
+                }
+
+                hr.hrVertical {
+                    @include imagenes(0.3rem, 2rem);
+                    @include margin(0rem, 1rem, 0rem, 1rem);
+                }
+
+                p {
+                    @include margin(0.5rem, 0rem, 0rem, 1.5rem);
+                    font-size: 0.9rem;
+                }
+            }
+
+            div#destino {
+                @include margin(0.4rem, 0rem, 0.5rem, 0.5rem);
+
+                p strong {
+                    font-size: 0.9rem;
+                }
+            }
+
+            div#precio {
+                @include margin(0.2rem, 2rem, 0.5rem, 0.5rem);
+
+                p strong {
+                    font-size: 0.8rem;
+                }
+            }
+
+            div#cartCancelar {
+                p {
+                    @include margin(0.2rem, 0rem, 0rem, 2.2rem);
+                    font-size: 0.9rem;
+                }
+
+                img.cartCancel {
+                    @include imagenes(1.5rem, 1.5rem);
+                    @include margin(0rem, 0rem, 0.5rem, 1rem);
+                }
+            }
+        }
+
+        div.cartLateralDerecho {
+            @include margin(0rem, 0rem, 0rem, 0rem);
+            @include imagenes(8rem, 13.5rem);
+            border-radius: 0rem 0.5rem 0.5rem 0rem;
+
+            p {
+                font-size: 0.95rem;
+                @include margin(0.2rem, 0rem, 0rem, 0rem);
+            }
+
+            img.cartImgAvion {
+                @include margin(0.5rem, 0rem, 0.5rem, 1.85rem);
+                @include imagenes(4.5rem, 4.5rem);
+            }
+
+            hr {
+                @include imagenes(6.2rem, 0.3rem);
+                border-radius: 1rem;
+                @include margin(0.5rem, 0rem, 0rem, 1rem);
+            }
+        }
+    }
+
+    div.cartCentrar {
+        @include imagenes(100%, 5.5rem);
+
+        button#cartBorrarCarrito {
+            @include margin(1rem, 0rem, 0rem, 0rem);
+            @include imagenes(20rem, 3.2rem);
+            font-size: 1.5rem;
+            border-radius: 0.5rem;
+        }
+    }
+
+    a {
+        div.cartCentrar {
+            button#cartIrAlInicio {
+                @include margin(1rem, 0rem, 0rem, 0rem);
+                @include imagenes(20rem, 3.2rem);
+                font-size: 1.5rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+    hr {
+        @include imagenes(12rem, 0.3rem);
+        border-radius: 1rem;
+        @include margin(0rem, 0rem, 0rem, 0.5rem);
+    }
+
+    div#totalCart {
+        @include imagenes(100%, 2.5rem);
+        @include margin (1rem, 0rem, 0.5rem, 0rem);
+
+        p {
+            font-size: 1.3rem;
+            @include margin (0.6rem, 0rem, 0rem, 0rem);
+        }
+    }
+
+    div#form {
+        form {
+            h1 {
+                font-size: 1.2rem;
+                @include margin (1rem, 0rem, 0.5rem, 0rem);
+            }
+
+            input {
+                @include imagenes(20.2rem, 2.5rem);
+                @include margin (0.5rem, 0rem, 0.5rem, 1rem);
+                border: 1px solid #151313;
+                border-radius: 7px;
+                font-size: 1rem;
+            }
+
+            button {
+                @include margin(1rem, 0rem, 0rem, 1.2rem);
+                @include imagenes(20rem, 3.2rem);
+                font-size: 1.5rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 400px) and (max-width: 760px) {
+
+    h1#carrito {
+        @include margin(0.5rem, 0rem, 0rem, 0rem);
+    }
+
+    h1#carritoVacio {
+        @include margin(0.5rem, 0rem, 0rem, 0rem);
+    }
+
+    div.ordenarCart {
+        @include margin(1rem, 0rem, 0rem, 0rem);
+
+        div.cartDetail {
+            @include imagenes(14.5rem, 13.5rem);
+            border-radius: 0.5rem 0rem 0rem 0.5rem;
+
+            div {
+                @include margin(0.85rem, 0rem, 0rem, 0rem);
+
+                h2 {
+                    font-size: 1.2rem;
+                    @include margin(0.3rem, 0rem, 0rem, 0rem);
+                }
+
+                hr.hrVertical {
+                    @include imagenes(0.3rem, 2rem);
+                    @include margin(0rem, 1rem, 0rem, 2.4rem);
+                }
+
+                p {
+                    @include margin(0.5rem, 0rem, 0rem, 1.9rem);
+                    font-size: 0.9rem;
+                }
+            }
+
+            div#destino {
+                @include margin(0.4rem, 0rem, 0.5rem, 0.6rem);
+
+                p strong {
+                    font-size: 0.9rem;
+                }
+            }
+
+            div#precio {
+                @include margin(0.2rem, 2.5rem, 0.5rem, 1rem);
+
+                p strong {
+                    font-size: 0.8rem;
+                }
+            }
+
+            div#cartCancelar {
+                p {
+                    @include margin(0.2rem, 0rem, 0rem, 2.8rem);
+                    font-size: 0.9rem;
+                }
+
+                img.cartCancel {
+                    @include imagenes(1.5rem, 1.5rem);
+                    @include margin(0rem, 0rem, 0.5rem, 1rem);
+                }
+            }
+        }
+
+        div.cartLateralDerecho {
+            @include margin(0rem, 0rem, 0rem, 0rem);
+            @include imagenes(9.4rem, 13.5rem);
+            border-radius: 0rem 0.5rem 0.5rem 0rem;
+
+            p {
+                font-size: 0.95rem;
+                @include margin(0.2rem, 0rem, 0rem, 0rem);
+            }
+
+            img.cartImgAvion {
+                @include margin(0.5rem, 0rem, 0.5rem, 2.2rem);
+                @include imagenes(5.2rem, 5.2rem);
+            }
+
+            hr {
+                @include imagenes(7.35rem, 0.3rem);
+                border-radius: 1rem;
+                @include margin(0.5rem, 0rem, 0rem, 1rem);
+            }
+        }
+    }
+
+    div.cartCentrar {
+        @include imagenes(100%, 5.5rem);
+
+        button#cartBorrarCarrito {
+            @include margin(1rem, 0rem, 0rem, 0rem);
+            @include imagenes(20rem, 3.2rem);
+            font-size: 1.5rem;
+            border-radius: 0.5rem;
+        }
+    }
+
+    a {
+        div.cartCentrar {
+            button#cartIrAlInicio {
+                @include margin(1rem, 0rem, 0rem, 0rem);
+                @include imagenes(20rem, 3.2rem);
+                font-size: 1.5rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+    hr {
+        @include imagenes(13.3rem, 0.3rem);
+        border-radius: 1rem;
+        @include margin(0rem, 0rem, 0rem, 0.6rem);
+    }
+
+    div#totalCart {
+        @include imagenes(100%, 2.5rem);
+        @include margin (1rem, 0rem, 0rem, 0rem);
+
+        p {
+            font-size: 1.3rem;
+            @include margin (0.6rem, 0rem, 0rem, 0rem);
+        }
+    }
+
+    div#form {
+        form {
+            h1 {
+                font-size: 1.2rem;
+                @include margin (1rem, 0rem, 0.5rem, 0rem);
+            }
+
+            input {
+                @include imagenes(20.2rem, 2.5rem);
+                @include margin (0.5rem, 0rem, 0.5rem, 2.6rem);
+                border: 1px solid #151313;
+                border-radius: 7px;
+                font-size: 1rem;
+            }
+
+            button {
+                @include margin(1rem, 0rem, 0rem, 2.9rem);
+                @include imagenes(20rem, 3.2rem);
+                font-size: 1.5rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 959px) {
+
+    h1#carrito {
+        @include margin(0.5rem, 0rem, 0rem, 0rem);
+    }
+
+    h1#carritoVacio {
+        @include margin(0.5rem, 0rem, 0rem, 0rem);
+    }
+
+    div.ordenarCart {
+        @include margin(1rem, 0rem, 0rem, 0rem);
+
+        div.cartDetail {
+            @include imagenes(23rem, 15rem);
+            border-radius: 0.5rem 0rem 0rem 0.5rem;
+            div {
                 @include margin(0.8rem, 0rem, 0rem, 0rem);
-                h2{
-                    @include margin(0.4rem, 0rem, 0rem, 0rem);
+
+                h2 {
+                    font-size: 1.7rem;
+                    @include margin(0.3rem, 0rem, 0rem, 0rem);
                 }
-                hr.hrVertical{
-                    @include imagenes(0.5rem, 2.5rem);
-                    @include margin(0rem, 1rem, 0rem, 4.2rem);
+
+                hr.hrVertical {
+                    @include imagenes(0.3rem, 2.7rem);
+                    @include margin(0rem, 1.5rem, 0rem, 5rem);
                 }
-                p{
-                    color: white;
-                    font-weight: bolder;
-                    @include margin(0.5rem, 0rem, 0rem, 4.7rem);
+
+                p {
+                    @include margin(0.5rem, 0rem, 0rem, 1.8rem);
                     font-size: 1.3rem;
                 }
-            } 
-            h3 strong{
-                @include margin(0rem, 0rem, 0rem, 0rem);
             }
-            p strong{
-                font-size: 1.2rem;
-                @include margin(0rem, 0rem, 0rem, 0rem);
-            }
-            div#cartCancelar{
-                p{
-                    color: white;
-                    font-weight: bolder;
-                    @include margin(0.2rem, 0rem, 0rem, 7.5rem);
-                    font-size: 1.1rem;
+
+            div#destino {
+                @include margin(0.5rem, 0rem, 0.5rem, 0rem);
+
+                p strong {
+                    font-size: 1.3rem;
                 }
-                img.cartCancel{
+            }
+
+            div#precio {
+                @include margin(0.5rem, 0rem, 0.5rem, 0rem);
+
+                p strong {
+                    font-size: 1.3rem;
+                }
+            }
+
+            div#cartCancelar {
+                @include margin(1rem, 0rem, 0.2rem, 5.5rem);
+                p {
+                    @include margin(0rem, 0rem, 0rem, 0rem);
+                    font-size: 1.3rem;
+                }
+
+                img.cartCancel {
+                    @include imagenes(1.5rem, 1.5rem);
+                    @include margin(0rem, 0rem, 0.5rem, 1rem);
+                }
+            }
+        }
+
+        div.cartLateralDerecho {
+            @include margin(0rem, 0rem, 0rem, 0rem);
+            @include imagenes(12rem, 15rem);
+            border-radius: 0rem 0.5rem 0.5rem 0rem;
+
+            p {
+                font-size: 1.25rem;
+                @include margin(0.2rem, 0rem, 0rem, 0rem);
+            }
+
+            img.cartImgAvion {
+                @include margin(0.5rem, 0rem, 0.5rem, 2.9rem);
+                @include imagenes(6.5rem, 6.5rem);
+            }
+
+            hr {
+                @include imagenes(9.9rem, 0.3rem);
+                border-radius: 1rem;
+                @include margin(0.5rem, 0rem, 0rem, 1rem);
+            }
+        }
+    }
+
+    div.cartCentrar {
+        @include imagenes(100%, 5.5rem);
+
+        button#cartBorrarCarrito {
+            @include margin(1rem, 0rem, 0rem, 0rem);
+            @include imagenes(30rem, 3.6rem);
+            font-size: 1.5rem;
+            border-radius: 0.5rem;
+        }
+    }
+
+    a {
+        div.cartCentrar {
+            button#cartIrAlInicio {
+                @include margin(1rem, 0rem, 0rem, 0rem);
+                @include imagenes(30rem, 3.6rem);
+                font-size: 1.5rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+    hr {
+        @include imagenes(21rem, 0.3rem);
+        border-radius: 1rem;
+        @include margin(0rem, 0rem, 0rem, 1rem);
+    }
+
+    div#totalCart {
+        @include imagenes(100%, 3rem);
+        @include margin (1rem, 0rem, 0rem, 0rem);
+
+        p {
+            font-size: 1.7rem;
+            @include margin (0.6rem, 0rem, 0rem, 0rem);
+        }
+    }
+
+    div#form {
+        form {
+            h1 {
+                font-size: 1.4rem;
+                @include margin (1rem, 0rem, 0.5rem, 0rem);
+            }
+
+            input {
+                @include imagenes(28rem, 2.7rem);
+                @include margin (0.5rem, 0rem, 0.5rem, 9.8rem);
+                border: 1px solid #151313;
+                border-radius: 7px;
+                font-size: 1rem;
+            }
+
+            button {
+                @include margin(1rem, 0rem, 0rem, 9rem);
+                @include imagenes(30rem, 3.6rem);
+                font-size: 1.5rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1399.98px) {
+
+    h1#carrito {
+        @include margin(0.5rem, 0rem, 0rem, 0rem);
+    }
+
+    h1#carritoVacio {
+        @include margin(0.5rem, 0rem, 0rem, 0rem);
+    }
+
+    div.ordenarCart {
+        @include margin(2rem, 0rem, 2rem, 0rem);
+
+        div.cartDetail {
+            @include imagenes(28rem, 20rem);
+            border-radius: 1rem 0rem 0rem 1rem;
+            div {
+                @include margin(0.8rem, 0rem, 0rem, 0rem);
+
+                h2 {
+                    @include margin(0.4rem, 0rem, 0rem, 0rem);
+                }
+
+                hr.hrVertical {
+                    @include imagenes(0.5rem, 2.5rem);
+                    @include margin(0rem, 1rem, 0.2rem, 8.7rem);
+                }
+
+                p {
+                    @include margin(0.5rem, 0rem, 0rem, 2rem);
+                    font-size: 1.5rem;
+                }
+            }
+
+            div#destino {
+                @include margin(1rem, 0rem, 1.5rem, 0rem);
+
+                p strong {
+                    font-size: 1.5rem;
+                }
+            }
+
+            div#precio {
+                @include margin(1rem, 0rem, 1.3rem, 0rem);
+
+                p strong {
+                    font-size: 1.5rem;
+                }
+            }
+
+            div#cartCancelar {
+                @include margin(1rem, 0rem, 0.5rem, 7.5rem);
+                p {
+                    @include margin(0rem, 0rem, 0rem, 0rem);
+                    font-size: 1.5rem;
+                }
+
+                img.cartCancel {
                     @include imagenes(2rem, 2rem);
                     @include margin(0rem, 0rem, 0.5rem, 1rem);
                 }
             }
         }
-        div.cartLateralDerecho{
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: center;
+        div.cartLateralDerecho {
             @include margin(0rem, 0rem, 0rem, 0.1rem);
-            @include imagenes(10rem, 18rem);
-            border-left: 3px dotted rgb(255, 255, 255);
+            @include imagenes(14rem, 20rem);
             border-radius: 0rem 1rem 1rem 0rem;
-            text-align: center;
-            background-color: #3482D5;
-            // transicion hover
             transition: 0.2s ease-in-out;
-            p{
-                color: white;
+            p {
+                font-size: 1.3rem;
                 @include margin(0.2rem, 0rem, 0rem, 0rem);
-                font-weight: bolder;
             }
-            img.cartImgAvion{
-                @include margin(1rem, 0rem, 1rem, 1.7rem);
-                @include imagenes(7rem, 7rem);
+
+            img.cartImgAvion {
+                @include margin(1rem, 0rem, 1rem, 2.5rem);
+                @include imagenes(9rem, 9rem);
             }
-            hr{
-                @include imagenes(8rem, 0.5rem);
-                background-color: #1d437e;
+
+            hr {
+                @include imagenes(12rem, 0.5rem);
                 border-radius: 1rem;
-                border:none;
-                @include margin(0.5rem, 0rem, 0rem, 1rem);
+                @include margin(0.6rem, 0rem, 0.2rem, 1rem);
             }
         }
     }
-    div.ordenarCart:hover{
-        div.cartLateralDerecho{
+
+    div.ordenarCart:hover {
+        div.cartLateralDerecho {
             @include margin(0rem, 0rem, 0rem, 1.2rem);
         }
     }
 
-
-
-
-
-div.cartCentrar{
-    display: flex;
-    justify-content: center;
-    button#cartBorrarCarrito{
-        @include margin(1rem, 0rem, 0rem, 0rem);
-        @include imagenes(30rem, 3.5rem);
-        background-color: rgb(243, 75, 75);
-        color: white;
-        font-size: 1.5rem;
-        border: none;
-        border-radius: 0.5rem;
-        transition: 0.5s;
-    }
-    button#cartBorrarCarrito:hover{
-        color: rgb(0, 0, 0);
-        box-shadow: 1px 1px 14px 7px rgb(185, 185, 185);
-    }
-}
-
-a{
-    text-decoration: none;
-    div.cartCentrar{
-        button#cartIrAlInicio{
+    div.cartCentrar {
+        @include imagenes(100%, 6rem);
+        button#cartBorrarCarrito {
             @include margin(1rem, 0rem, 0rem, 0rem);
-            @include imagenes(25rem, 3.5rem);
-            background-color: rgb(26, 218, 132);
-            color: white;
-            font-size: 1.5rem;
-            border: none;
-            border-radius: 0.5rem;
-            transition: 0.5s;
-        }
-        button#cartIrAlInicio:hover{
-            color: rgb(75, 75, 75);
-            box-shadow: 1px 1px 14px 5px rgba(39, 39, 39, 0.281);
-        }
-    }
-}
-
-hr{
-    @include imagenes(23rem, 0.5rem);
-    background-color: #1d437e;
-    border-radius: 1rem;
-    border:none;
-    @include margin(0rem, 0rem, 0rem, 1rem);
-}
-
-div#totalCart{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    text-align: center;
-    border: 1px solid black;
-    @include imagenes(100%, 4rem);
-    p{
-        font-size: 2rem;
-        @include margin (1rem, 0rem, 0rem, 0rem);
-    }
-}
-
-div#totalCart:hover{
-    background-color: #151313;
-    color: white;
-}
-
-div#form{
-    form{
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        h1{
-            text-align: center;
-        }
-        input{
-            @include imagenes(35rem, 3.2rem);
-            @include margin (1.5rem, 0rem, 1rem, 35rem);
-            text-align: center;
-            border: 1px solid #151313;
-            border-radius: 7px;
-            font-size: 1rem;
-            background-color: #ffffff;
-            font-family: 'Comfortaa', cursive;
-        }
-        input:hover{
-            background-color: #151313;
-        }
-        button{
             @include imagenes(30rem, 3.5rem);
-            background-color: rgb(95, 164, 255);
-            color: white;
             font-size: 1.5rem;
-            border: none;
             border-radius: 0.5rem;
             transition: 0.5s;
-            @include margin (2rem, 0rem, 1rem, 38rem);
         }
-        button:hover{
-            color: rgb(0, 0, 0);
+
+        button#cartBorrarCarrito:hover {
             box-shadow: 1px 1px 14px 7px rgb(185, 185, 185);
+        }
+    }
+
+    a {
+        div.cartCentrar {
+            button#cartIrAlInicio {
+                @include margin(1rem, 0rem, 0rem, 0rem);
+                @include imagenes(25rem, 3.5rem);
+                font-size: 1.5rem;
+                border-radius: 0.5rem;
+                transition: 0.5s;
+            }
+
+            button#cartIrAlInicio:hover {
+                box-shadow: 1px 1px 14px 5px rgba(39, 39, 39, 0.281);
+            }
+        }
+    }
+
+    hr {
+        @include imagenes(26rem, 0.5rem);
+        border-radius: 1rem;
+        @include margin(0rem, 0rem, 0rem, 1rem);
+    }
+
+    div#totalCart {
+        border: 1px solid black;
+        @include imagenes(100%, 4rem);
+
+        p {
+            font-size: 2rem;
+            @include margin (1rem, 0rem, 0rem, 0rem);
+        }
+    }
+
+
+    div#totalCart:hover {
+        background-color: #151313;
+        color: white;
+    }
+
+    div#form {
+        form {
+            input {
+                @include imagenes(35rem, 3.2rem);
+                @include margin (1rem, 0rem, 1rem, 17.3rem);
+                border: 1px solid #151313;
+                border-radius: 7px;
+                font-size: 1rem;
+            }
+
+            input:hover {
+                background-color: #151313;
+            }
+
+            button {
+                @include imagenes(30rem, 3.5rem);
+                font-size: 1.5rem;
+                border-radius: 0.5rem;
+                transition: 0.5s;
+                @include margin (1rem, 0rem, 0.5rem, 20.3rem);
+            }
+
+            button:hover {
+                box-shadow: 1px 1px 14px 7px rgb(185, 185, 185);
+            }
         }
     }
 }

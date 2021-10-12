@@ -20,7 +20,9 @@ function EnlacesProvincias(){
                 <p>Tierra del fuego</p>
             </Link>
         </div>
-        <img src = "patagonizate-logo.png" alt = "Patagonizate logo"id = "logo" />
+        <div id="logo">
+        <img src = "patagonizate-logo.png" alt = "Patagonizate logo" className= "logo" id="info"/>
+        </div>
         </>
     )
 }

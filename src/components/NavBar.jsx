@@ -3,7 +3,9 @@ import { useCartContext } from '../Context/cartContext';
 import { CartWidget } from './Cart/CartWidget';
 
 function NavBar() {
+
 const {agregar} = useCartContext()
+
     return (
         <>
         <nav className="navBar">
@@ -14,13 +16,20 @@ const {agregar} = useCartContext()
                 <p>Hoteles</p>
                 </Link>
                 <Link to={"/categoria/Tour"}>
-                <p>Tours</p>
+                <p>Excursiones</p>
                 </Link>
                 <Link to="/">
-                <img src="patagonizate-titulo.PNG" alt="" id="patagonizateTitulo"/>
+                <img src="patagonizate-titulo.PNG" alt="PATAGONIZATE" id="patagonizateTitulo"/>
                 </Link>
-                <p>Sobre</p>
+                <a href="#info">
+                    <p>Sobre</p>
+                </a>
+                <a href="#reviewsTitulo">
+                    <p>Reviews</p>
+                </a>
+                <a href="#contacto">
                 <p>Contacto</p>
+                </a>
                 {agregar.length === 0? <div id="sinIcon"></div> : <CartWidget/>}
         </nav>
         </>

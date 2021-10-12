@@ -1,109 +1,303 @@
-img#logoAvion{
-    @include imagenes(40rem, 20rem);
-    @include margin (0rem, 0rem, 1rem, 32rem);
-}
-
-
-h1#titular{
+div#titular{
     color: #151313;
-    border-top: 1px solid #151313;
     background-color: #ffffff;
     text-align: center;
-    @include padding (1.5rem, 1.5rem, 1.5rem, 1.5rem);
-    @include margin (2rem, 0rem, 5rem, 0rem);
-    @include imagenes(100%, 2rem);
-    transition: 0.5s;
-}
-
-h1#titular:hover{
-    color: #ffffff;
-    background-color: #151313;
-}
-
-div.itemListContainer{
-    display: flex;
-    @include margin (5rem, 0rem, 0rem, 3rem);
-    ul {
-        list-style: none;
-        text-align: center;
-        color: rgb(255, 255, 255);
-        font-size: 3rem;
-        letter-spacing: 12px;
-        line-height: 4rem;
-        font-weight: bold;
-    }
-}
-
-div#itemListContainerContenedor{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+    border-top: 1px solid #151313;
+    border-bottom: 1px solid #151313;
 }
 
 // item
 
-
 div.item{
-    @include margin (0rem, 1rem, 3rem, 0rem);
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    div.items:hover{
-        background-color: #5ca0f2;
-        color: white;
-        border: none;
-        button{
-            background-color: #ffffff;
-            color: #1C6E8C;
-        }
-        img{
-            @include imagenes(19.5rem, 16rem);
-            @include margin (-40px, 0px, 0px, -7px);
-        }
-    }
     div.items {
-        border-radius: 10px;
-        color: #000000;
         font-weight: bold;
-        border: 1px solid #274156;
-        background-color: #ffffff;
-        @include imagenes(18.5rem, 28rem);
-        @include padding (0rem, 0rem, 0rem, 0rem);
-        @include margin (0rem, 0rem, 2.5rem, 1.8rem);
-        transition: 0.5s;
-        img{
-            border-radius: 10px;
-            @include imagenes(18.6rem, 15rem);
-            @include margin (-20px, 0px, 0px, -1px);
-            transition: 0.7s;
-        }
         h3, h4, p {
             text-align: center;
-            @include margin (1rem, 1rem, 1rem, 1rem);
             font-weight: bold;
         }
-        p{
-            font-size: 0.8rem;
-        }
         p.itemDescription{
-            @include margin (0rem, 1.5rem, 1rem, 2rem);
             text-align: left;
-            font-size: 0.65rem;
         }
         button{
-            background-color: #1C6E8C;
-            border-radius: 6px;
             border: none;
-            color: #ffffff;
-            transition: all 1s ease 0s;
-        }
-        button.detail{
-            font-size: 1.1rem;
-            @include imagenes(150px, 30px);
-            @include margin (1px, 0px, 0px, 20px);
+            border-radius: 6px;
         }
     }
 }
 
+@media (min-width: 300px) and (max-width: 399px){
+    img#logoAvion{
+        @include imagenes(100%, 12rem);
+        @include margin (0rem, 0rem, -2rem, 0rem);
+    }
 
+    div#titular{
+        @include padding (0rem, 0rem, 0rem, 0rem);
+        @include margin (2rem, 0rem, 2.5rem, 0rem);
+        @include imagenes(100%, 2rem);
+        font-size: 0.5rem;
+    }
+
+    div.item{
+        justify-content: center;
+        @include margin (0rem, 0rem, 0rem, 0rem);
+        div.items{
+            border-radius: 10px;
+            border: none;
+            background-color: #5ca0f2;
+            color: white;
+            @include imagenes(18rem, 28.3rem);
+            @include padding (0rem, 0rem, 0rem, 0rem);
+            @include margin (0rem, 0rem, 3rem, 0rem);
+            img{
+                border-radius: 1rem;
+                @include imagenes(18.8rem, 15rem);
+                @include margin (-1rem, 0px, 0px, -0.3rem);
+            }
+            h3, h4, p{
+                @include margin (1rem, 1rem, 1rem, 1rem);
+            }
+            p{
+                font-size: 0.8rem;
+            }
+            p.itemDescription{
+                @include margin (0rem, 1.5rem, 1rem, 2rem);
+                font-size: 0.65rem;
+            }
+            button{
+                background-color: #ffffff;
+                color: #1C6E8C;
+            }
+            button.detail{
+                font-size: 1rem;
+                @include imagenes(7.8rem, 1.7rem);
+                @include margin (1px, 0px, 0px, 1rem);
+            }
+            div{
+                @include imagenes(9rem, 2.6rem);
+                @include margin (0rem, 0rem, 0.8rem, 4.3rem);
+                border: 5px double rgb(255, 187, 187);
+                background-color: rgb(238, 52, 52);
+                p.prodAgotado{
+                    text-align: center;
+                    color: rgb(255, 221, 221);
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 400px) and (max-width: 760px){
+    img#logoAvion{
+        @include imagenes(100%, 15rem);
+        @include margin (0rem, 0rem, -2rem, 0rem);
+    }
+
+    div#titular{
+        @include padding (0rem, 0rem, 0rem, 0rem);
+        @include margin (2rem, 0rem, 2.5rem, 0rem);
+        @include imagenes(100%, 2.7rem);
+        font-size: 0.6rem;
+    }
+
+    div.item{
+        justify-content: center;
+        @include margin (0rem, 0rem, 0rem, 0rem);
+        div.items{
+            border-radius: 10px;
+            border: none;
+            background-color: #5ca0f2;
+            color: white;
+            @include imagenes(18rem, 28rem);
+            @include padding (0rem, 0rem, 0rem, 0rem);
+            @include margin (0rem, 0rem, 3rem, 0rem);
+            img{
+                border-radius: 10px;
+                @include imagenes(18.5rem, 15rem);
+                @include margin (-1rem, 0px, 0px, -0.25rem);
+            }
+            h3, h4, p{
+                @include margin (1rem, 1rem, 1rem, 1rem);
+            }
+            p{
+                font-size: 0.8rem;
+            }
+            p.itemDescription{
+                @include margin (0rem, 1.5rem, 1rem, 2rem);
+                font-size: 0.65rem;
+            }
+            button{
+                background-color: #ffffff;
+                color: #1C6E8C;
+            }
+            button.detail{
+                font-size: 1rem;
+                @include imagenes(7.8rem, 1.7rem);
+                @include margin (1px, 0px, 0px, 1rem);
+            }
+            div{
+                @include imagenes(9rem, 2.6rem);
+                @include margin (0rem, 0rem, 0.8rem, 4.3rem);
+                border: 5px double rgb(255, 187, 187);
+                background-color: rgb(238, 52, 52);
+                p.prodAgotado{
+                    text-align: center;
+                    color: rgb(255, 221, 221);
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 959px){
+    img#logoAvion{
+        @include imagenes(100%, 23rem);
+        @include margin (0rem, 0rem, -2rem, 0rem);
+    }
+
+    div#titular{
+        @include padding (0rem, 0rem, 0rem, 0rem);
+        @include margin (2rem, 0rem, 3rem, 0rem);
+        @include imagenes(100%, 4.5rem);
+        font-size: 1rem;
+    }
+
+    div.item{
+        justify-content: space-around;
+        @include margin (0rem, 0rem, 0rem, 0rem);
+        div.items{
+            border-radius: 10px;
+            border: none;
+            background-color: #5ca0f2;
+            color: white;
+            @include imagenes(19rem, 31rem);
+            @include padding (0rem, 0rem, 0rem, 0rem);
+            @include margin (0rem, 0rem, 2.5rem, 0rem);
+            img{
+                border-radius: 10px;
+                @include imagenes(20rem, 16rem);
+                @include margin (-1rem, 0px, 0px, -0.5rem);
+            }
+            h3, h4, p{
+                @include margin (1rem, 1rem, 1rem, 1rem);
+            }
+            p{
+                font-size: 1rem;
+            }
+            p.itemDescription{
+                @include margin (0rem, 1.5rem, 0rem, 2rem);
+                font-size: 0.8rem;
+            }
+            button{
+                background-color: #ffffff;
+                color: #1C6E8C;
+            }
+            button.detail{
+                font-size: 1.2rem;
+                @include imagenes(9rem, 2rem);
+                @include margin (1px, 0px, 0px, 1rem);
+            }
+            div{
+                @include imagenes(10rem, 2.8rem);
+                @include margin (1rem, 0rem, 0.8rem, 4rem);
+                border: 5px double rgb(255, 187, 187);
+                background-color: rgb(238, 52, 52);
+                p.prodAgotado{
+                    text-align: center;
+                    color: rgb(255, 236, 236);
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1399.98px){
+    img#logoAvion{
+        @include imagenes(50rem, 23rem);
+        @include margin (0rem, 0rem, -1rem, 10rem);
+    }
+
+    div#titular{
+        @include padding (0rem, 0rem, 0rem, 0rem);
+        @include margin (1rem, 0rem, 4rem, 0rem);
+        @include imagenes(100%, 4.7rem);
+        transition: 0.5s;
+    }
+
+    div#titular:hover{
+        color: #ffffff;
+        background-color: #151313;
+    }
+
+    div.item{
+        justify-content: space-around;
+        @include margin (0rem, 0rem, 0rem, 0rem);
+        div.items:hover{
+            background-color: #5ca0f2;
+            color: white;
+            border: none;
+            img{
+                @include imagenes(19.2rem, 15rem);
+                @include margin (-40px, 0px, 0px, -0.7rem);
+            }
+            button{
+                background-color: #ffffff;
+                color: #1C6E8C;
+            }
+        }
+        div.items{
+            border-radius: 10px;
+            border: 1px solid #274156;
+            background-color: #ffffff;
+            color: #000000;
+            @include imagenes(17.8rem, 27rem);
+            @include padding (0rem, 0rem, 0rem, 0rem);
+            @include margin (0rem, 0rem, 3rem, 0rem);
+            transition: 0.5s;
+            img{
+                border-radius: 10px;
+                @include imagenes(17.95rem, 14rem);
+                @include margin (-20px, 0px, 0px, -0.1rem);
+                transition: 0.7s;
+            }
+            h3, h4, p{
+                @include margin (1rem, 1rem, 1rem, 1rem);
+            }
+            p{
+                font-size: 0.8rem;
+            }
+            p.itemDescription{
+                @include margin (0rem, 1.5rem, 1rem, 2rem);
+                font-size: 0.65rem;
+            }
+            button{
+                background-color: #1C6E8C;
+                color: #ffffff;
+                transition: all 1s ease 0s;
+            }
+            button.detail{
+                font-size: 1.1rem;
+                @include imagenes(150px, 30px);
+                @include margin (1px, 0px, 0px, 20px);
+            }
+
+            div{
+                @include imagenes(9rem, 2.6rem);
+                @include margin (0rem, 0rem, 0.8rem, 4rem);
+                border: 8px double rgb(255, 187, 187);
+                background-color: rgb(238, 52, 52);
+                p.prodAgotado{
+                    text-align: center;
+                    color: rgb(255, 236, 236);
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
 

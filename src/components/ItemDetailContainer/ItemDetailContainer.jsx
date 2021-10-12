@@ -8,8 +8,6 @@ export function ItemDetailContainer(){
 
     const { item } = useParams()
 
-    console.log(item);
-
     useEffect(() => {
         const db = getFirestore()
         db.collection('productos').doc(item).get()
@@ -23,8 +21,6 @@ export function ItemDetailContainer(){
         } )
 
     }, [item])
-    
-    console.log(producto);
 
     return(
         <div className="itemDetailContainer">

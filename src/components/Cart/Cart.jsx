@@ -1,9 +1,9 @@
-import { useCartContext } from "../../Context/cartContext"
+import {useCartContext} from '../../Context/cartContext';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 import {getFirestore} from '../../service/getFirebase';
 import firebase from "firebase";
-import 'firebase/firestore'
+import 'firebase/firestore';
 
 
 const initialState= {
@@ -16,16 +16,14 @@ function Cart(){
 
     const [formularioCompra, setFormularioCompra] = useState(initialState)
 
-    const {borrarListado, agregar, borrarItem, total} = useCartContext()
-
-    console.log(total);
+    const {borrarListado, agregar, borrarItem, total, pedidoEnviado} = useCartContext()
 
     function cambioEnFormulario(e){
-        setFormularioCompra({
-            ...formularioCompra,
-            [e.target.name]: e.target.value
-        })
-        console.log(formularioCompra);
+            setFormularioCompra({
+                ...formularioCompra,
+                [e.target.name]: e.target.value
+            })
+
     }
 
     function TerminarCompra(e){
@@ -33,11 +31,10 @@ function Cart(){
 
         const pedido={
             buyer:formularioCompra,
+            total: total(),
             items: agregar,
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
-
-        console.log(pedido);
 
         const baseDeDato = getFirestore()
         const pedidos = baseDeDato.collection('pedidos')
@@ -46,6 +43,7 @@ function Cart(){
         .catch(err => console.log(err))
         .finally(()=>{
             setFormularioCompra(initialState)
+            pedidoEnviado()
             borrarListado()
         })
         
@@ -53,8 +51,6 @@ function Cart(){
 
     return(
         <>
-        
-            
                 {agregar.length === 0?
                 <>
                 <h1 id="carritoVacio">Carrito Vacio</h1>
@@ -75,10 +71,14 @@ function Cart(){
                                 <hr className="hrVertical"/>
                             <h2>#{items.initial}</h2>
                         </div>
-                            <hr/>                
-                        <h3><strong>Destino: {items.title}</strong></h3>
                             <hr/>
-                        <p><strong>Precio por {items.cant} personas: $ {items.price * items.cant}</strong></p>
+                            <div id="destino">
+                                <p><strong>Destino: {items.title}</strong></p>
+                            </div>      
+                            <hr/>
+                            <div id="precio">
+                            <p><strong>Precio por {items.cant} personas: $ {items.price * items.cant}</strong></p>
+                            </div>
                             <hr/>
                         <div id="cartCancelar" onClick={() => borrarItem(items.id)}>
                             <p>Cancelar Viaje</p>
@@ -104,18 +104,17 @@ function Cart(){
                     onSubmit={TerminarCompra}
                     onChange={cambioEnFormulario}>
                         <h1>Datos para compra</h1>
-                        <input type="text" placeholder="Ingresa tu nombre" name="nombre" value={formularioCompra.nombre}/>
-                        <input type="tel" placeholder="Ingresa tu tel" name="tel" value={formularioCompra.tel}/>
-                        <input type="email" placeholder="Ingresa tu email" name="email" value={formularioCompra.email}/>
+                        <input type="text" placeholder="Ingresa tu nombre" name="nombre" defaultValue={formularioCompra.nombre}/>
+                        <input type="text" placeholder="Ingresa tu tel" name="tel" defaultValue={formularioCompra.tel}/>
+                        <input type="email" placeholder="Ingresa tu email" name="email" defaultValue={formularioCompra.email}/>
+                        <input type="email" placeholder="Confirme el email" name="email"/>
                         <button>Terminar compra</button>
                 </form>
             </div>
-                    <div className="cartCentrar">
+            <div className="cartCentrar">
                     <button id="cartBorrarCarrito" onClick={borrarListado}> Vaciar Carrito</button>
-                    </div>
-                </>}
-            
-            
+            </div>
+            </>}
         </>   
     )
 }

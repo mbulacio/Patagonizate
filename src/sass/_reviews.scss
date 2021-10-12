@@ -1,0 +1,253 @@
+#reviewsTitulo {
+	color: #151313;
+	border-top: 1px solid #151313;
+	border-bottom: 1px solid #151313;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+
+@mixin white-gradient {
+	background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+div#reviews {
+	border-bottom: 1px solid #151313;
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	overflow: hidden;
+	position: relative;
+
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		position: absolute;
+		z-index: 2;
+	}
+
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+
+	#animacionReviews {
+		animation: scroll 35s linear infinite;
+		display: flex;
+	}
+
+	.slide {
+		p strong {
+			color: #151313;
+		}
+
+		p {
+			text-align: center;
+			color: #999999;
+		}
+	}
+}
+
+@media (min-width: 300px) and (max-width: 399px){
+	#reviewsTitulo {
+		@include margin (-1rem, 0rem, 1rem, 0rem);
+		@include padding (0.5rem, 0rem, 0.5rem, 0rem);
+		font-size: 1.3rem;
+	}
+
+	// Animation
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(calc(-250px * 7))
+		}
+	}
+
+	div#reviews {
+		height: 11rem;
+		@include margin (-1rem, 0rem, 0rem, 0rem);
+		width: 100%;
+
+		&::before,
+		&::after {
+			height: 10rem;
+			width: 10rem;
+		}
+
+		#animacionReviews {
+			width: calc(250px * 14);
+		}
+
+		.slide {
+			@include imagenes (30rem, 2rem);
+			@include margin (0.5rem, 2rem, 1rem, 2rem);
+
+			p strong {
+				font-size: 1rem;
+			}
+
+			p {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 400px) and (max-width: 760px){
+	#reviewsTitulo {
+		@include margin (-1rem, 0rem, 1rem, 0rem);
+		@include padding (0.5rem, 0rem, 0.5rem, 0rem);
+		font-size: 1.3rem;
+	}
+
+	// Animation
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(calc(-250px * 7))
+		}
+	}
+
+	div#reviews {
+		height: 11rem;
+		@include margin (-1rem, 0rem, 1.5rem, 0rem);
+		width: 100%;
+
+		&::before,
+		&::after {
+			height: 10rem;
+			width: 10rem;
+		}
+
+		#animacionReviews {
+			width: calc(250px * 14);
+		}
+
+		.slide {
+			@include imagenes (30rem, 2rem);
+			@include margin (0.5rem, 2rem, 1rem, 2rem);
+
+			p strong {
+				font-size: 1rem;
+			}
+
+			p {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 767px) and (max-width: 959px){
+	#reviewsTitulo {
+		@include margin (-1rem, 0rem, 1rem, 0rem);
+		@include padding (0.5rem, 0rem, 0.5rem, 0rem);
+		font-size: 1.8rem;
+	}
+
+	// Animation
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(calc(-250px * 7))
+		}
+	}
+
+	div#reviews {
+		height: 14rem;
+		@include margin (-1rem, 0rem, 1.5rem, 0rem);
+		width: 100%;
+
+		&::before,
+		&::after {
+			height: 14rem;
+			width: 4rem;
+		}
+
+		#animacionReviews {
+			width: calc(250px * 15);
+		}
+
+		.slide {
+			@include imagenes (30rem, 2rem);
+			@include margin (0.5rem, 2rem, 0rem, 2rem);
+
+			p strong {
+				font-size: 1.5rem;
+			}
+
+			p {
+				font-size: 1.3rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 960px) and (max-width: 1399.98px) {
+	#reviewsTitulo {
+		@include margin (0rem, 0rem, 0rem, 0rem);
+		@include padding (0.5rem, 0rem, 0.5rem, 0rem);
+		transition: 0.5s;
+	}
+
+	#reviewsTitulo:hover {
+		color: #ffffff;
+		background-color: #151313;
+	}
+
+	// Animation
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(calc(-250px * 7))
+		}
+	}
+
+	div#reviews {
+		height: 16rem;
+		@include margin (0rem, 0rem, 2.5rem, 0rem);
+		width: 100%;
+
+		&::before,
+		&::after {
+			height: 300px;
+			width: 100px;
+		}
+
+		#animacionReviews {
+			width: calc(250px * 25);
+		}
+
+		.slide {
+			@include imagenes (30rem, 2rem);
+			@include margin (1rem, 5rem, 1rem, 5rem);
+
+			p strong {
+				font-size: 2rem;
+			}
+
+			p {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+}

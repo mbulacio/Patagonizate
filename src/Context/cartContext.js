@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import Swal from "sweetalert2";
 
 const CartContext = createContext()
 
@@ -8,21 +9,21 @@ function CartContextProvider({children}) {
     const [agregar, setAgregar] = useState([])
 
     const agregarAlCarrito = (producto) => {
-
         if(EnCarrito(producto.id)){
             if(producto.cant === 4 || producto.cant < 5){
-                const sumar = producto.cant += 1
-                console.log(sumar);
-                console.log(agregar);
+                producto.cant += 1
             }
         }else{
             setAgregar([...agregar, producto])
         }
-
     }
 
     const EnCarrito = (id) => {
         return agregar.find(e => e.id === id) 
+    }
+
+    const borrarListado = () => {
+        setAgregar([])
     }
 
     const borrarItem = (itemId) => {
@@ -30,15 +31,49 @@ function CartContextProvider({children}) {
         return setAgregar(filtarCart)
     }
 
-    const borrarListado = () => {
-        setAgregar([])
-    }
-
     const total = () => {
         return agregar.reduce((acum, valor) => (acum + (valor.cant * valor.price)), 0)
     }
 
-    console.log(agregar); 
+    const pedidoEnviado = () => { 
+        let timerInterval
+        Swal.fire({
+                title: 'Enviando tu pedido',
+                html: 'se enviará en <b></b>.',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    timerInterval = setInterval(() => {
+                        const content = Swal.getHtmlContainer()
+                        if (content) {
+                            const b = content.querySelector('b')
+                            if (b) {
+                                b.textContent = Swal.getTimerLeft()
+                            }
+                        }
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
+            .then(() => {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Pedido Enviado',
+                    text: 'Pronto nos comunicaremos por email!',
+                    showConfirmButton: false,
+                    timer: 1800
+                })
+
+            });
+    }
 
     return (
         <CartContext.Provider value={{
@@ -46,7 +81,8 @@ function CartContextProvider({children}) {
             agregarAlCarrito,
             borrarListado,
             borrarItem,
-            total
+            total,
+            pedidoEnviado
         }}>
             {children}
         </CartContext.Provider>

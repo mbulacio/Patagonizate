@@ -1,9 +1,12 @@
 @import './mixins';
 @import './navBar';
+@import './sobre';
 @import './itemListContainer';
+@import './reviews';
+@import './contacto';
 @import './itemDetailContainer';
 @import './cart';
-@import './sobre';
+
 
 
 // App.js
@@ -22,20 +25,81 @@ img#imagenPrincipal{
 div#provincias{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: space-around;
     p{
-        @include margin(0rem, 3rem, 3rem, 3rem);
-        font-size: 2.5rem;
         font-weight: bold;
-    }
-    p:hover{
-        color: #9197a7;
+        text-align: center;
     }
 }
 
-#logo{
-    @include imagenes(13rem, 13rem);
-    @include margin (1rem, 0rem, 1rem, 47rem);
+div#logo{
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 300px) and (max-width: 399px){
+    div#provincias{
+        p{
+            @include padding(0rem, 0.3rem, 0rem, 0.2rem);
+            @include margin(-2rem, 0rem, 0rem, 0rem);
+            font-size: 0.7rem;
+        }
+    }
+
+    img#imagenPrincipal{
+        @include padding(0rem, 0rem, 0rem, 0rem);
+    }
+
+    .logo{
+        @include imagenes(3.5rem, 3.5rem);
+        @include margin (-1rem, 0rem, 0rem, 0rem);
+    }
+}
+
+@media (min-width: 400px) and (max-width: 760px){
+    div#provincias{
+        p{
+            @include padding(0rem, 0.4rem, 0rem, 0.5rem);
+            @include margin(-1.9rem, 0rem, 0rem, 0rem);
+            font-size: 0.75rem;
+        }
+    }
+
+    .logo{
+        @include imagenes(3.5rem, 3.5rem);
+    }
+}
+
+@media (min-width: 767px) and (max-width: 959px){
+    div#provincias{
+        p{
+            @include padding(0rem, 1rem, 0rem, 1.5rem);
+            @include margin(-3rem, 0rem, 0rem, 0rem);
+            font-size: 1.2rem;
+        }
+    }
+
+    .logo{
+        @include imagenes(9rem, 9rem);
+        @include margin (0rem, 0rem, 1rem, 0rem);
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1399.98px){
+    div#provincias{
+        p{
+            @include margin(-4rem, 2.5rem, 2rem, 3.2rem);
+            font-size: 1.5rem;
+        }
+        p:hover{
+            color: #9197a7;
+        }
+    }
+
+    .logo{
+        @include imagenes(9rem, 9rem);
+        @include margin (0.5rem, 0rem, 0.5rem, 0rem);
+    }
 }
 
 // enlaces provincias
@@ -51,15 +115,12 @@ div#provincias{
 // index.js
 
 body {
-    margin: 0; 
+    margin: 0rem; 
     font-family: 'Comfortaa', cursive;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #ffffff;
   }
   
-  .fondoPrincipal {
-    width: 100%;
-  }
 
  

@@ -53,7 +53,9 @@ export function ItemListContainer() {
     return ( 
         <>
         <img src = "https://img.freepik.com/vector-gratis/ruta-ruta-linea-avion-punto-inicio-trazo-linea-trazos_166001-133.jpg?size=626&ext=jpg" alt = "Patagonizate logo" id = "logoAvion" />
-        <h1 id="titular">Tu proximo destino esta aqui</h1>
+        <div id="titular">
+            <h1 >Tu proximo destino esta aqui</h1>
+        </div>
         <ItemList produc = {productos}/> 
         </>
     );

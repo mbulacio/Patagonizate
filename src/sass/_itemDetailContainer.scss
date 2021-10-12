@@ -1,65 +1,297 @@
 // itemDetail, itemCount
 
 div.itemDetailContainer{
-    @include margin (0.5rem, 0rem, 0rem, 2rem);
     display: flex;
     justify-content: center;
-    div.itemDetailImg{
-        img{
-            @include imagenes(45rem, 37rem);
-            @include margin (4rem, 5rem, 0rem, 2rem);
-        }
-    }
     div.itemDetail{
-        border-radius: 0px 10px 10px 0px;
         color: black;
-        @include imagenes(60rem, 45rem);
         background-color: #ffffff;
-        @include padding (2rem, 0rem, 0rem, 2rem);
-        @include margin (0rem, 3rem, 0rem, 0rem);
         h3{
             text-align: center;
             color: rgb(8, 8, 8);
-            @include margin(-0.5rem, 3rem, 0rem, 0rem);
-            font-size: 2rem;
         }
         p.descripcion{
             text-align: center;
-            font-size: 0.8rem;
-            @include padding (0.5rem, 3rem, 0.2rem, 1rem);
-        }
-        label{
-            font-size: 25px;
-        }
-        button{
-            background-color: hsl(0, 0%, 100%);
-            border-radius: 6px;
-            border: 1px solid #151313;
-            color: #151313;
-            transition: 0.4s;
-        }
-        button:hover{
-            background-color: #151313;
-            color: #ffffff;
-        }
-        button.sumar{
-            font-size: 22px;
-            @include imagenes(2rem, 2rem);
-            @include margin (2rem, 2rem, 0rem, 19rem);
-        }
-        button.restar{
-            font-size: 25px;
-            @include imagenes(2rem, 2rem);
-            @include margin (0rem, 0rem, 0rem, 2rem);
         }
         button.agregarAlCarrito{
-            font-size: 16px;
             font-weight: bold;
-            @include imagenes(12rem, 2.8rem);
-            @include margin (2rem, 0rem, 0rem, 17.3rem);
             a{
                 text-decoration: none;
                 color: rgb(12, 156, 175);
+            }
+        }
+    }
+}
+
+@media (min-width: 300px) and (max-width: 399px){
+    div.itemDetailContainer{
+        flex-flow: row wrap;
+        @include margin (0.5rem, 0rem, 0rem, 0rem);
+        div.itemDetailImg{
+            img{
+                @include imagenes(23rem, 16rem);
+                @include margin (0rem, 0rem, 0rem, 0rem);
+            }
+        }
+        div.itemDetail{
+            @include imagenes(60rem, 41rem);
+            @include padding (0rem, 0rem, 0rem, 0rem);
+            @include margin (0rem, 0rem, 0rem, 0rem);
+            h3{
+                @include margin(1rem, 0rem, 0rem, 0rem);
+                font-size: 1.2rem;
+            }
+            article{
+                p strong{
+                    @include margin(0rem, 0rem, 0rem, 1rem);
+                }
+            }
+            p.descripcion{
+                font-size: 0.8rem;
+                @include margin(0rem, 0rem, 0rem, 0rem);
+                @include padding (0.5rem, 0rem, 0.2rem, 0rem);
+            }
+            label{
+                font-size: 25px;
+            }
+            button{
+                border: none;
+                background-color: #5ca0f2;
+                color: white;
+                border-radius: 6px;
+            }
+            button.sumar{
+                font-size: 22px;
+                @include imagenes(2rem, 2rem);
+                @include margin (1rem, 2rem, 0rem, 6.9rem);
+            }
+            button.restar{
+                font-size: 25px;
+                @include imagenes(2rem, 2rem);
+                @include margin (1rem, 0rem, 0rem, 2rem);
+            }
+            button.agregarAlCarrito{
+                font-size: 16px;
+                @include imagenes(12rem, 2.8rem);
+                @include margin (1.5rem, 0rem, 0rem, 5.2rem);
+            }
+            div{
+                @include imagenes(18rem, 5rem);
+                @include margin (3.5rem, 0rem, 0rem, 1.9rem);
+                border: 8px double rgb(255, 187, 187);
+                background-color: rgb(238, 52, 52);
+                p.prodAgotado{
+                    text-align: center;
+                    color: rgb(255, 236, 236);
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 400px) and (max-width: 760px){
+    div.itemDetailContainer{
+        flex-flow: row wrap;
+        @include margin (0.2rem, 0rem, 0rem, 0rem);
+        div.itemDetailImg{
+            img{
+                @include imagenes(27rem, 19rem);
+                @include margin (0rem, 0rem, 0rem, 0rem);
+            }
+        }
+        div.itemDetail{
+            @include imagenes(60rem, 41rem);
+            @include padding (0rem, 0rem, 0rem, 0rem);
+            @include margin (0rem, 0rem, 0rem, 0rem);
+            h3{
+                @include margin(1rem, 0rem, 0rem, 0rem);
+                font-size: 1.2rem;
+            }
+            article{
+                p strong{
+                    @include margin(0rem, 0rem, 0rem, 1rem);
+                }
+            }
+            p.descripcion{
+                font-size: 0.8rem;
+                @include margin(0rem, 0rem, 0rem, 0rem);
+                @include padding (0.5rem, 0rem, 0.2rem, 0rem);
+            }
+            label{
+                font-size: 25px;
+            }
+            button{
+                border: none;
+                background-color: #5ca0f2;
+                color: white;
+                border-radius: 6px;
+            }
+            button.sumar{
+                font-size: 22px;
+                @include imagenes(2rem, 2rem);
+                @include margin (1rem, 2rem, 0rem, 8.5rem);
+            }
+            button.restar{
+                font-size: 25px;
+                @include imagenes(2rem, 2rem);
+                @include margin (1rem, 0rem, 0rem, 2rem);
+            }
+            button.agregarAlCarrito{
+                font-size: 16px;
+                @include imagenes(12rem, 2.8rem);
+                @include margin (1.5rem, 0rem, 0rem, 6.5rem);
+            }
+            div{
+                @include imagenes(18rem, 5rem);
+                @include margin (3.5rem, 0rem, 0rem, 3.5rem);
+                border: 8px double rgb(255, 187, 187);
+                background-color: rgb(238, 52, 52);
+                p.prodAgotado{
+                    text-align: center;
+                    color: rgb(255, 236, 236);
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 959px){
+    div.itemDetailContainer{
+        flex-flow: row wrap;
+        @include margin (0.2rem, 0rem, 0rem, 0rem);
+        div.itemDetailImg{
+            img{
+                @include imagenes(48rem, 31rem);
+                @include margin (0rem, 0rem, 0rem, 0rem);
+            }
+        }
+        div.itemDetail{
+            @include imagenes(60rem, 43rem);
+            @include padding (0rem, 0rem, 0rem, 0rem);
+            @include margin (0rem, 0rem, 0rem, 0rem);
+            h3{
+                @include margin(1rem, 0rem, 0rem, 0rem);
+                font-size: 1.7rem;
+            }
+            article{
+                p strong{
+                    font-size: 1.3rem;
+                    @include margin(0rem, 0rem, 0rem, 1rem);
+                }
+            }
+            p.descripcion{
+                font-size: 1rem;
+                @include margin(0rem, 0rem, 0rem, 0rem);
+                @include padding (0.5rem, 4rem, 0.2rem, 4rem);
+            }
+            label{
+                font-size: 2rem;
+            }
+            button{
+                border: none;
+                background-color: #5ca0f2;
+                color: white;
+                border-radius: 6px;
+            }
+            button.sumar{
+                font-size: 25px;
+                @include imagenes(2.5rem, 2.5rem);
+                @include margin (1rem, 2rem, 0rem, 19rem);
+            }
+            button.restar{
+                font-size: 28px;
+                @include imagenes(2.5rem, 2.5rem);
+                @include margin (1rem, 0rem, 0rem, 2rem);
+            }
+            button.agregarAlCarrito{
+                font-size: 20px;
+                @include imagenes(14rem, 3rem);
+                @include margin (1.5rem, 0rem, 0rem, 16.6rem);
+            }
+            div{
+                @include imagenes(33rem, 5.5rem);
+                @include margin (4rem, 0rem, 0rem, 7rem);
+                border: 8px double rgb(255, 187, 187);
+                background-color: rgb(238, 52, 52);
+                p.prodAgotado{
+                    text-align: center;
+                    color: rgb(255, 236, 236);
+                    font-size: 1.95rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1399.98px){
+    div.itemDetailContainer{
+        @include margin (1rem, 0rem, 0rem, 0rem);
+        div.itemDetailImg{
+            img{
+                @include imagenes(37rem, 26rem);
+                @include margin (1.2rem, 0rem, 0rem, 1rem);
+            }
+        }
+        div.itemDetail{
+            border-radius: 0px 10px 10px 0px;
+            @include imagenes(60rem, 30rem);
+            @include padding (0rem, 0rem, 0rem, 2rem);
+            @include margin (0rem, 0rem, 0rem, 0rem);
+            h3{
+                @include margin(0rem, 1rem, 0rem, 0rem);
+                font-size: 1.1rem;
+            }
+            article{
+                p strong {
+                    font-size: 0.7rem;
+                    @include padding (0rem, 3rem, 0rem, 2rem);
+                }
+            }
+            p.descripcion{
+                font-size: 0.6rem;
+                @include padding (0rem, 4rem, 0rem, 3rem);
+            }
+            label{
+                font-size: 1.5rem;
+            }
+            button{
+                background-color: hsl(0, 0%, 100%);
+                border: 1px solid #151313;
+                color: #151313;
+                border-radius: 6px;
+                transition: 0.4s;
+            }
+            button:hover{
+                background-color: #151313;
+                color: #ffffff;
+            }
+            button.sumar{
+                font-size: 22px;
+                @include imagenes(1.8rem, 1.8rem);
+                @include margin (0rem, 2rem, 0rem, 11.4rem);
+            }
+            button.restar{
+                font-size: 25px;
+                @include imagenes(1.8rem, 1.8rem);
+                @include margin (0rem, 0rem, 0rem, 2rem);
+            }
+            button.agregarAlCarrito{
+                font-size: 16px;
+                @include imagenes(11.5rem, 2.3rem);
+                @include margin (1rem, 0rem, 0rem, 9.8rem);
+            }
+            div{
+                @include imagenes(20rem, 3.7rem);
+                @include margin (3rem, 0rem, 0rem, 4.5rem);
+                border: 8px double rgb(255, 187, 187);
+                background-color: rgb(238, 52, 52);
+                p.prodAgotado{
+                    text-align: center;
+                    color: rgb(255, 236, 236);
+                    font-size: 1.3rem;
+                }
             }
         }
     }
